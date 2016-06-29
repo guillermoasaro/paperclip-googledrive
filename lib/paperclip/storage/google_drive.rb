@@ -49,14 +49,15 @@ module Paperclip
             #upload(style, file) #style file
             client = google_api_client
             drive = client.discovered_api('drive', 'v2')
+            folder_id = find_public_folder
             result = client.execute(
               :api_method => drive.files.get,
-              :parameters => { 'fileId' => @google_drive_options[:public_folder_id],
+              :parameters => { 'fileId' => folder_id,
                               'fields' => '  id, title' })
             client.authorization.access_token = result.request.authorization.access_token
             client.authorization.refresh_token = result.request.authorization.refresh_token
             title, mime_type = title_for_file(style), "#{content_type}"
-            parent_id = @google_drive_options[:public_folder_id] # folder_id for Public folder
+            parent_id = folder_id # folder_id for Public folder
             metadata = drive.files.insert.request_schema.new({
               'title' => title, #if it is no extension, that is a folder and another folder
               'description' => 'paperclip file on google drive',
@@ -208,7 +209,11 @@ module Paperclip
         unless @google_drive_options[:public_folder_id]
           raise KeyError, "you must set a Public folder if into options"
         end
-        @google_drive_options[:public_folder_id]
+        if @google_drive_options[:public_folder_id].is_a? Proc
+          instance.instance_exec(&@google_drive_options[:public_folder_id])
+        else
+          @google_drive_options[:public_folder_id]
+        end
       end
       class FileExists < ArgumentError
       end
