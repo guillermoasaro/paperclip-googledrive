@@ -1,4 +1,3 @@
-
 module Paperclip
   module GoogleDrive
     class Railtie < Rails::Railtie

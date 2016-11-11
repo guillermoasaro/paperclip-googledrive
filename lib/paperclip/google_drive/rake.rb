@@ -1,4 +1,3 @@
-
 require 'google/api_client'
 
 module Paperclip

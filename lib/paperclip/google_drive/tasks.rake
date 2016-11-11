@@ -1,4 +1,3 @@
-
 require "paperclip/google_drive/rake"
 
 namespace :google_drive do
