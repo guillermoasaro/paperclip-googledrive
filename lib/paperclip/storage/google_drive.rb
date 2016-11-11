@@ -3,7 +3,12 @@ require 'active_support/inflector/methods'
 require 'active_support/core_ext/object/blank'
 require 'yaml'
 require 'erb'
-require 'google/api_client'
+
+require 'google/apis/drive_v3'
+require 'googleauth'
+require 'googleauth/stores/file_token_store'
+
+require 'fileutils'
 
 module Paperclip
 
