@@ -1,7 +1,6 @@
 require 'google/apis/drive_v3'
 require 'googleauth'
 require 'googleauth/stores/file_token_store'
-require 'pry'
 
 require 'fileutils'
 
@@ -25,7 +24,6 @@ module Paperclip
         scope = Google::Apis::DriveV3::AUTH_DRIVE
 
         FileUtils.mkdir_p(File.dirname(credentials_path))
-        binding.pry
         client_id = Google::Auth::ClientId.from_file(client_secret_path)
         token_store = Google::Auth::Stores::FileTokenStore.new(file: credentials_path)
         authorizer = Google::Auth::UserAuthorizer.new(
