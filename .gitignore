@@ -1,4 +1,4 @@
-
+*.log
 *.gem
 *.rbc
 .bundle

@@ -45,14 +45,16 @@ module Paperclip
         client.client_options.application_name = application_name
         client.authorization = credentials
         # # List the 10 most recently modified files.
-        # response = client.list_files(page_size: 10,
-        #                               fields: 'nextPageToken, files(id, name)')
+        require 'pry'
+        # binding.pry
+        response = client.list_files(page_size: 10, fields: 'nextPageToken, files(id, name)')
+        rr = client.get_file(response.files[0].id, fields: 'nextPageToken, files(id, name), webContentLink, labels/trashed')
+        binding.pry
         # puts 'Files:'
         # puts 'No files found' if response.files.empty?
         # response.files.each do |file|
         #   puts "#{file.name} (#{file.id})"
         # end
-
         puts "\nAuthorization completed.\n\n"
         puts "The credentials were saved into #{ credentials_path}.\n"
         puts "You can use these credentials as follows: \n"

@@ -1,3 +1,4 @@
+require 'active_support/core_ext/module'
 module Paperclip
   module GoogleDrive
     class Railtie < Rails::Railtie

@@ -31,4 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "vcr", "~> 3"
   spec.add_development_dependency "webmock", "~> 2.1"
   spec.add_development_dependency "jazz_fingers", "~> 4"
+  spec.add_development_dependency('activerecord', '>= 4.2.0')
+  spec.add_development_dependency('sqlite3')
+  spec.add_development_dependency('railties')
 end
