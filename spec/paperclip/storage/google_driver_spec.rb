@@ -20,6 +20,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
       expect(@dummy.avatar).to_not be_blank
       expect(@dummy.avatar).to be_present
       @dummy.save
+      @dummy.avatar.url
       # binding.pry
       # 1
       # dummy_class

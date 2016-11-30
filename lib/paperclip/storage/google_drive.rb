@@ -196,14 +196,14 @@ module Paperclip
       end
 
       def default_image
-        # if @google_drive_options[:default_url] #if default image is set
-        #   title = @google_drive_options[:default_url]
-        #   searched_id = search_for_title(title) # id
-        #   metadata = metadata_by_id(searched_id) unless searched_id.nil?
-        #   metadata['webContentLink']
-        # else
-        #   'No picture' # ---- ?
-        # end
+        if @google_drive_options[:default_url] #if default image is set
+          title = @google_drive_options[:default_url]
+          searched_id = search_for_title(title) # id
+          metadata = metadata_by_id(searched_id) unless searched_id.nil?
+          metadata.web_content_link
+        else
+          'No picture' # ---- ?
+        end
       end
 
       def find_public_folder
