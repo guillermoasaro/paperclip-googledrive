@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Paperclip::Storage::GoogleDrive' do
   before do
     rebuild_model storage: :google_drive,
-      :google_drive_credentials_path => "spec/support/credentials.yml",
+      :google_drive_credentials_path => "spec/support/google_drive_credentials.yml",
       :google_drive_client_secret_path => "spec/support/client_secret.json",
       :styles => { :medium => "300x300" },
       :google_drive_options => {
