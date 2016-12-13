@@ -22,25 +22,23 @@ Or install it yourself as:
 
 Google Drive is a free service for file storage files. In order to use this storage you need a Google (or Google Apps) user which will own the files, and a Google API client.
 
-1. Go to the [Google Developers console](https://console.developers.google.com/project) and create a new project.
+1. Go to the [Google Developers console](https://console.developers.google.com/project) and create a new project, this option is on the top, next to the Google APIs logo.
 
-2. Go to "APIs & Auth > APIs" and enable "Drive API". If you are getting an "Access Not Configured" error while uploading files, this is due to this API not being enabled.
+2. Go to "API Manager > Library" in the section "Google Apps APIs" and enable "Drive API". If you are getting an "Access Not Configured" error while uploading files, this is due to this API not being enabled.
 
-3. Go to "APIs & Auth > Credentials" and create a new OAuth 2.0 Client ID; select "web application" type, specify `http://localhost` for application home page.
+3. Go to "API Manager > Credentials" and click on "OAuth Client ID" before to select "Other" type you must specify `http://localhost` for application home page.
 
-4. Now you will have a Client ID, Client Secret, and Redirect URL.
+4. Now you will have a Client ID, Client Secret, and Redirect URL. So, download the client_secret_XXXXX.json file and rename it to client_secrete.json.
 
 5. Run the authorization task:
     ```sh
-    $ rake google_drive:authorize"[path/to/client_secret.json, path/to/credentials.yml, application_name]"
+    $ rake google_drive:authorize"[path/to/client_secret.json, path/to/google_drive_credentials, application_name]"
     ```
     NOTE: the `path/to/client_secret.json` path is the file downloaded from Google console.
-    NOTE: the `path/to/credentials.yml` path this file will be created for this task.
-    NOTE: application_name param is the name that you set to the application on Google console.
+          the `path/to/google_drive_credentials` path point to the file which will be created for this task.
+          the application_name param is the name that you set for the application credentials on Google console.
 
-    When you call this Rake task, it will ask you to provide the client id, client secret, redirect url and auth scope. Specify `https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/userinfo.profile` for scope ([more on Google Drive scopes](https://developers.google.com/drive/scopes)).
-
-6. The Rake task will give you an auth url. Simply go to that url (while signed in as the designated uploads owner), authorize the app, then enter code from url in the console. The rake task will output valid ruby code which you can use to create a client, in particular, the access and refresh tokens.
+6. The Rake task will give you an auth url. Simply go to that url (while signed in as the designated uploads owner), authorize the app, then enter code from url in the console. The rake task will output valid `google_drive_credentials.yml` which you can use to connect with GoogleDrive from now on.
 
 7. Create a folder in which the files will be uploaded; note the folder's ID.
 
@@ -51,7 +49,7 @@ Example:
 class Product < ActiveRecord::Base
  has_attached_file :photo,
     :storage => :google_drive,
-    :google_drive_credentials => "#{Rails.root}/config/google_drive.yml"
+    :google_drive_credentials => "#{Rails.root}/config/google_drive_credentials.yml"
 end
 ```
 The `:google_drive_credentials` option
