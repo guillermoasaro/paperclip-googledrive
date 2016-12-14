@@ -59,7 +59,7 @@ module Paperclip
 
           result = google_api_client.create_file(
             file_metadata,
-            fields: '*',
+            fields: 'id',
             upload_source: file.binmode,
             content_type: file.content_type,
             )
@@ -71,7 +71,7 @@ module Paperclip
       #
       def flush_deletes
         @queued_for_delete.each do |path|
-          Paperclip.log("delete #{path}")
+          Paperclip.log("Delete: #{path}")
           file_id = search_for_title(path)
           result = google_api_client.delete_file(file_id) unless file_id.nil?
         end
@@ -142,14 +142,12 @@ module Paperclip
       def search_for_title(name)
         raise 'You are trying to search a file with NO name' if name.nil? || name.empty?
         client = google_api_client
-        result = client.list_files(
+        result = client.list_files(page_size: 1,
                 q: "name contains '#{ name }' and '#{ find_public_folder }' in parents",
-                fields: '*'
+                fields: 'files(id, name)'
                 )
         if result.files.length > 0 # TODO: change these coditionals
-          result.files[0].id # WTF: get the first file???
-        elsif result.files.length == 0
-          nil
+          result.files[0].id
         else
           nil
         end
@@ -162,7 +160,7 @@ module Paperclip
           client = google_api_client
           result = client.get_file(
                     file_id,
-                    fields: '*'
+                    fields: 'id, name, thumbnailLink'
                     )
           result
         end
