@@ -124,8 +124,15 @@ module Paperclip
           default_image
         else
           metadata = metadata_by_id(searched_id)
-          metadata.thumbnail_link #web_content_link #or metadata.web_view_link?
+          full_image_for(metadata.thumbnail_link) #web_content_link #or metadata.web_view_link?
         end
+      end
+
+      # Removes the last parameter `=s220` which is inchaged to scale the retrieved image
+      # @param drive_thumbnail_link [ String ]
+      # @return [ String ]
+      def full_image_for(drive_thumbnail_link)
+        drive_thumbnail_link.split(/=s/)[0]
       end
 
       # Takes the file title/name and search it in a given folder
@@ -180,7 +187,7 @@ module Paperclip
           title = @google_drive_options[:default_url]
           searched_id = search_for_title(title) # id
           metadata = metadata_by_id(searched_id) unless searched_id.nil?
-          metadata.thumbnail_link#web_view_link #web_content_link
+          full_image_for(metadata.thumbnail_link) #web_view_link #web_content_link
         else
           'No picture' # ---- ?
         end
