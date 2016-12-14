@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require 'paperclip-googledrive'
+require 'paperclip-google-drive'
 Dir[File.join('./spec/support/**/*.rb')].each { |f| require f }
 require 'rspec'
 require 'pry'

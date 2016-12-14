@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "paperclip/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "paperclip-googledrive"
+  spec.name          = "paperclip-google-drive"
   spec.version       = PaperclipGoogleDrive::VERSION
   spec.authors       = ['Diego Gomez']
   spec.email         = ["diego.f.gomez.pardo@gmail.com"]
 
   spec.summary       = %q{Extends Paperclip with Google Drive storage}
-  spec.description   = %q{paperclip-googledrive extends paperclip support of storage for google drive storage}
+  spec.description   = %q{paperclip-google-drive extends paperclip support of storage for google drive storage}
   spec.homepage      = "https://github.com/degzcs/paperclip-googledrive"
 
   spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
