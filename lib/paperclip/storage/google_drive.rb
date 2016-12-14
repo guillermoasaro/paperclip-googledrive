@@ -6,7 +6,7 @@ require 'erb'
 
 require 'google/apis/drive_v3'
 require 'googleauth'
-require 'googleauth/stores/file_token_store'
+require 'paperclip/google_drive/session'
 
 require 'fileutils'
 
@@ -29,55 +29,49 @@ module Paperclip
       # * original_extension  return extension of file
 
     module GoogleDrive
-
       def self.extended(base)
         begin
           require 'google-api-client'
         rescue LoadError => e
-          e.message << " (You may need to install the google-api-client gem)"
+          e.message << "(You may need to install the google-api-client gem)"
           raise e
         end unless defined?(Google)
 
         base.instance_eval do
-          @google_drive_credentials_path = @options[:google_drive_credentials_path]
           @google_drive_client_secret_path = @options[:google_drive_client_secret_path]
-          @google_drive_options = @options[:google_drive_options] || {}
-          raise 'You must to provide a valid google_drive_client_secret_path option' unless @google_drive_client_secret_path.present?
-          raise 'You must to provide a valid google_drive_credentials_path option' unless @google_drive_credentials_path.present?
+          @google_drive_options = @options[:google_drive_options] || { application_name: 'test-app' }
+          fail(ArgumentError, 'You must to provide a valid google_drive_client_secret_path option') unless @google_drive_client_secret_path
           google_api_client # Force validations of credentials
         end
       end
+
       #
       def flush_writes
         @queued_for_write.each do |style, file|
-          if exists?(path(style))
-            raise FileExists, "file \"#{path(style)}\" already exists in your Google Drive"
-          else
-            #upload(style, file) #style file
-            client = google_api_client
-            folder_id = find_public_folder
+          raise FileExists, "file \"#{path(style)}\" already exists in your Google Drive" if exists?(path(style))
+          #upload(style, file) #style file
+          client = google_api_client
 
-            name, mime_type = name_for_file(style), "#{ file.content_type }"
-            parent_id = folder_id # folder_id for Public folder
-            file_metadata = {
-              'name' => name,
-              'description' => 'paperclip file on google drive',
-              'mimeType' => mime_type
-            }
-            # if parent_id
-            #   file_metadata.parents = [{'id' => parent_id}]
-            # end
-            result = client.create_file(
-              file_metadata,
-              fields: 'name, id, webContentLink, trashed',
-              upload_source: file.binmode,
-              content_type: file.content_type,
-              )
-          end
+          name, mime_type = name_for_file(style), "#{ file.content_type }"
+
+          file_metadata = {
+            name: name,
+            description: 'paperclip file on google drive',
+            mimeType: mime_type,
+            parents: [find_public_folder]
+          }
+
+          result = client.create_file(
+            file_metadata,
+            fields: '*',
+            upload_source: file.binmode,
+            content_type: file.content_type,
+            )
         end
         after_flush_writes
         @queued_for_write = {}
       end
+
       #
       def flush_deletes
         @queued_for_delete.each do |path|
@@ -88,37 +82,21 @@ module Paperclip
         end
         @queued_for_delete = []
       end
-      #
+
+      # @return [ Google::Apis::DriveV3::DriveService ]
       def google_api_client
         @google_api_client ||= begin
-          # assert_required_keys
-        # Initialize the client & Google+ API
-          scope = Google::Apis::DriveV3::AUTH_DRIVE
-          application_name = 'Drive API'
-          client = Google::Apis::DriveV3::DriveService.new
-          client_id = Google::Auth::ClientId.from_file(@google_drive_client_secret_path)
-          token_store = Google::Auth::Stores::FileTokenStore.new(file: @google_drive_credentials_path)
-          authorizer = Google::Auth::UserAuthorizer.new(client_id, scope, token_store)
-          user_id = 'default'
-          credentials = authorizer.get_credentials(user_id)
-          client.client_options.application_name = application_name || 'ppc-gd'
-          client.authorization = credentials
-          # List the 10 most recently modified files.
-          response = client.list_files(page_size: 10,
-                                        fields: 'nextPageToken, files(id, name)')
-          puts 'Files:'
-          puts 'No files found' if response.files.empty?
-          response.files.each do |file|
-            puts "#{file.name} (#{file.id})"
-          end
-          client
+          # Initialize the client & Google+ API
+          ::Paperclip::GoogleDrive::Session.from_config(
+            @google_drive_client_secret_path,
+            application_name: @google_drive_options[:application_name]
+          )
         end
       end
-      #
+
+      # @return [ Google::Apis::DriveV3::DriveService ]
       def google_drive
         client = google_api_client
-        # drive = client.discovered_api('drive', 'v2')
-        # drive
       end
 
       def url(*args)
@@ -145,23 +123,29 @@ module Paperclip
         end
       end # full title
 
-      def public_url_for title
+      # Gets the public url for a passed filename
+      # @param title [ String ]
+      # @return [ String ] with url
+      def public_url_for(title)
         searched_id = search_for_title(title) #return id if any or style
         if searched_id.nil? # it finds some file
           default_image
         else
           metadata = metadata_by_id(searched_id)
-          metadata['webContentLink']
+          metadata.web_content_link #or metadata.web_view_link?
         end
-      end # url
-      # take title, search in given folder and if it finds a file, return id of a file or nil
+      end
+
+      # Takes the file title/name and search it in a given folder
+      # If it finds a file, return id of a file or nil
+      # @param name [ String ]
+      # @return [ String ] or NilClass
       def search_for_title(name)
         raise 'You are trying to search a file with NO name' if name.nil? || name.empty?
         client = google_api_client
         result = client.list_files(
-                # 'folderId' => find_public_folder,
-                q: "name contains '#{name}'", # full_title
-                fields: 'nextPageToken, files(id, name)'
+                q: "name contains '#{ name }' and '#{ find_public_folder }' in parents",
+                fields: '*'
                 )
         if result.files.length > 0 # TODO: change these coditionals
           result.files[0].id # WTF: get the first file???
@@ -170,20 +154,24 @@ module Paperclip
         else
           nil
         end
-      end # id or nil
+      end
 
+      # @parent file_id [ String ]
       # @return [ Google::Apis::DriveV3::File ]
       def metadata_by_id(file_id)
         if file_id.is_a? String
           client = google_api_client
           result = client.get_file(
                     file_id,
-                    fields: 'id, name, webContentLink, trashed'
+                    fields: '*'
                     )
           result
         end
       end
 
+      # Checks if the image already exits
+      # @param style [ String ]
+      # @return [ Boolean ]
       def exists?(style = default_style)
         return false if not present?
         result_id = search_for_title(path(style))
@@ -207,49 +195,32 @@ module Paperclip
       end
 
       def find_public_folder
-        unless @google_drive_options[:public_folder_id]
-          raise KeyError, "you must set a Public folder if into options"
-        end
+        raise KeyError, "You must set the public_folder_id option" unless @google_drive_options[:public_folder_id]
         if @google_drive_options[:public_folder_id].is_a? Proc
           instance.instance_exec(&@google_drive_options[:public_folder_id])
         else
           @google_drive_options[:public_folder_id]
         end
       end
+
+      #
+      # Error classes
+      #
+
       class FileExists < ArgumentError
       end
+
       private
 
-        def file_title
-          return @google_drive_options[:path] if @google_drive_options[:path] #path: proc
-          eval %(proc { |style| "\#{id}_\#{#{name}.original_filename}"})
-        end
+      def file_title
+        return @google_drive_options[:path] if @google_drive_options[:path] #path: proc
+        eval %(proc { |style| "\#{id}_\#{#{name}.original_filename}"})
+      end
 
-        def parse_credentials(credentials)
-          # result =
-          #   case credentials
-          #   when File
-          #     YAML.load(ERB.new(File.read(credentials.path)).result)
-          #   when String, Pathname
-          #     YAML.load(ERB.new(File.read(credentials)).result)
-          #   when Hash
-          #     credentials
-          #   else
-          #     raise ArgumentError, ":google_drive_credentials are not a path, file, nor a hash"
-          #   end
-          # result.symbolize_keys #or string keys
-        end
-        # check either all ccredentials keys is set
-        def assert_required_keys
-          # keys_list = [:client_id, :client_secret, :access_token, :refresh_token]
-          # keys_list.each do |key|
-          #   #@google_drive_credentials.fetch(key)
-          # end
-        end
-        # return extension of file
-        def original_extension
-          File.extname(original_filename)
-        end
+      # @return [String] with the extension of file
+      def original_extension
+        File.extname(original_filename)
+      end
     end
 
   end
