@@ -23,9 +23,7 @@ module Paperclip
       # * default_image  return url to default url if set in option
       # * find_public_folder return id of Public folder, must be in options
       # return id of Public folder, must be in options
-      # * file_tit return base pattern of title or custom one set by user
-      # * parse_credentials(credenti get credentials from file, hash or path
-      # * assert_required_keys  check either all ccredentials keys is set
+      # * file_title return base pattern of title or custom one set by user
       # * original_extension  return extension of file
 
     module GoogleDrive
@@ -49,8 +47,6 @@ module Paperclip
       def flush_writes
         @queued_for_write.each do |style, file|
           raise FileExists, "file \"#{path(style)}\" already exists in your Google Drive" if exists?(path(style))
-          #upload(style, file) #style file
-          client = google_api_client
 
           name, mime_type = name_for_file(style), "#{ file.content_type }"
 
@@ -61,7 +57,7 @@ module Paperclip
             parents: [find_public_folder]
           }
 
-          result = client.create_file(
+          result = google_api_client.create_file(
             file_metadata,
             fields: '*',
             upload_source: file.binmode,
@@ -76,9 +72,8 @@ module Paperclip
       def flush_deletes
         @queued_for_delete.each do |path|
           Paperclip.log("delete #{path}")
-          client = google_api_client
           file_id = search_for_title(path)
-          result = client.delete_file('fileId' => file_id) unless file_id.nil?
+          result = google_api_client.delete_file('fileId' => file_id) unless file_id.nil?
         end
         @queued_for_delete = []
       end
@@ -94,10 +89,7 @@ module Paperclip
         end
       end
 
-      # @return [ Google::Apis::DriveV3::DriveService ]
-      def google_drive
-        client = google_api_client
-      end
+      alias_method :google_drive, :google_api_client
 
       def url(*args)
         if present?

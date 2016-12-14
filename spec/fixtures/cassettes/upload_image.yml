@@ -1,0 +1,3159 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.googleapis.com/oauth2/v3/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=refresh_token&refresh_token=1%2F_sVZIgY5thPetbWDKZj3QpAdmJrmxDID5Rkvq6UEniL1YshaDnq5dIKoUAKgjE9f&client_id=932398239496-38rbghfh4i4jbckorqfq0m7o4rbfotjt.apps.googleusercontent.com&client_secret=1yYjNh1pR_Xps8tqdYM2LcuL
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:14 GMT
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+         "access_token": "ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg",
+         "token_type": "Bearer",
+         "expires_in": 3600
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:15 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?fields=*&q=name%20contains%20%27original_1_image_original_1_image.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyb3NMQUhyWUNsZFE%27%20in%20parents
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#fileList",
+         "files": [
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyMDBYa0t0a1RMaE0",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "140",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyMDBYa0t0a1RMaE0&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyMDBYa0t0a1RMaE0/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh5.googleusercontent.com/RZRTYZZfJMFoEIAdY1K2h_r4lPJARg93anl4Aw9cx7Lxd1lFR6qDRpg_lCMhxunVreQvYw=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:54:26.844Z",
+           "modifiedTime": "2016-12-14T00:54:26.844Z",
+           "modifiedByMeTime": "2016-12-14T00:54:26.844Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGya2NZOVM3YWNEbXZDOU41UmlsbU9hVkNSdURjPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyd1FKcVFDaVdJclk",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "130",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyd1FKcVFDaVdJclk&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyd1FKcVFDaVdJclk/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh4.googleusercontent.com/K1rzFVx-yKpMoofK238Grg9EXinLvyxA_LhSu67C-TN85RMB_w_xn8dNiJoC1-fP1WelKA=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:49:03.691Z",
+           "modifiedTime": "2016-12-14T00:49:03.691Z",
+           "modifiedByMeTime": "2016-12-14T00:49:03.691Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGyekZSU1p5MmdNRURkdXV3cTFQaVpOTEFQSFQ4PQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyanJkMDNmbmtwWDg",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "118",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyanJkMDNmbmtwWDg&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyanJkMDNmbmtwWDg/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh3.googleusercontent.com/s41RRUA0hwO5pKwcg6EHUbB5eVLpUXPFKpYyV1jhc0aj6qH81-XtgDCFP5R6ckEQqcKLSQ=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:46:27.036Z",
+           "modifiedTime": "2016-12-14T00:46:27.036Z",
+           "modifiedByMeTime": "2016-12-14T00:46:27.036Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGydGxzSkxJZ3R6Mk1DY1BDdHRyL2IrRWVrSVRFPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGybUJmcGh5Nk9YR28",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "103",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGybUJmcGh5Nk9YR28&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGybUJmcGh5Nk9YR28/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh5.googleusercontent.com/oQFozSygZl424hrMmknvLAl6jI8RurYohN0rQgCP_xKewNu5z-VktoExSnnYnvqSeii81A=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:45:43.658Z",
+           "modifiedTime": "2016-12-14T00:45:43.658Z",
+           "modifiedByMeTime": "2016-12-14T00:45:43.658Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGyV2FGQWZpNXZ4dFJGUmttTWtZRjVoamZiSnVvPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyX2pYWFdlXzI3WGM",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "94",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyX2pYWFdlXzI3WGM&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyX2pYWFdlXzI3WGM/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh4.googleusercontent.com/SIUgy-w1P8LeG1LxCdfSfgEYK6TE0viqtc-WKGl6LnIGaDqwo6I1IfMvSIivpwK28fskig=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": true,
+           "viewedByMeTime": "2016-12-13T20:59:23.837Z",
+           "createdTime": "2016-12-13T20:54:21.353Z",
+           "modifiedTime": "2016-12-13T20:54:21.353Z",
+           "modifiedByMeTime": "2016-12-13T20:54:21.353Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGyNFRwRmxjOGZkdmFqYytYZ0pXM2VCcVE1Vm9JPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:15 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyMDBYa0t0a1RMaE0?fields=*
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "0B-GFJI5FWVGyMDBYa0t0a1RMaE0",
+         "name": "original_1_image.png",
+         "mimeType": "image/png",
+         "description": "paperclip file on google drive",
+         "starred": false,
+         "trashed": true,
+         "explicitlyTrashed": true,
+         "parents": [
+          "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+         ],
+         "spaces": [
+          "drive"
+         ],
+         "version": "140",
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyMDBYa0t0a1RMaE0&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyMDBYa0t0a1RMaE0/view?usp=drivesdk",
+         "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+         "hasThumbnail": true,
+         "thumbnailLink": "https://lh5.googleusercontent.com/RZRTYZZfJMFoEIAdY1K2h_r4lPJARg93anl4Aw9cx7Lxd1lFR6qDRpg_lCMhxunVreQvYw=s220",
+         "thumbnailVersion": "1",
+         "viewedByMe": false,
+         "createdTime": "2016-12-14T00:54:26.844Z",
+         "modifiedTime": "2016-12-14T00:54:26.844Z",
+         "modifiedByMeTime": "2016-12-14T00:54:26.844Z",
+         "modifiedByMe": true,
+         "owners": [
+          {
+           "kind": "drive#user",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+           "me": true,
+           "permissionId": "11275349978511166647",
+           "emailAddress": "popasnacks@gmail.com"
+          }
+         ],
+         "lastModifyingUser": {
+          "kind": "drive#user",
+          "displayName": "Popasnacks SAS",
+          "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+          "me": true,
+          "permissionId": "11275349978511166647",
+          "emailAddress": "popasnacks@gmail.com"
+         },
+         "shared": false,
+         "ownedByMe": true,
+         "capabilities": {
+          "canEdit": true,
+          "canComment": true,
+          "canShare": true,
+          "canCopy": true,
+          "canReadRevisions": true
+         },
+         "viewersCanCopyContent": true,
+         "writersCanShare": true,
+         "permissions": [
+          {
+           "kind": "drive#permission",
+           "id": "11275349978511166647",
+           "type": "user",
+           "emailAddress": "popasnacks@gmail.com",
+           "role": "owner",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+          }
+         ],
+         "originalFilename": "original_1_image.png",
+         "fullFileExtension": "png",
+         "fileExtension": "png",
+         "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+         "size": "4920",
+         "quotaBytesUsed": "4920",
+         "headRevisionId": "0B-GFJI5FWVGya2NZOVM3YWNEbXZDOU41UmlsbU9hVkNSdURjPQ",
+         "imageMediaMetadata": {
+          "width": 50,
+          "height": 51,
+          "rotation": 0
+         },
+         "isAppAuthorized": true
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:15 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=*
+    body:
+      encoding: UTF-8
+      string: '{"description":"paperclip file on google drive","name":"original_1_image.png","parents":["0B-GFJI5FWVGyb3NMQUhyWUNsZFE"]}'
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Protocol:
+      - resumable
+      X-Goog-Upload-Command:
+      - start
+      X-Goog-Upload-Header-Content-Length:
+      - '4920'
+      X-Goog-Upload-Header-Content-Type:
+      - image/png
+      Content-Length:
+      - '121'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UopqqlCXAHYe8b07uwWZQRzhIv4kYk3yF08HZzX0aig4-r2XaERS34iO_bBOVOPOHqL9u-ZXGpchKFqV6JfCDDs8PGEIGZaNCHKkc2LhuJYtzbSg-g
+      X-Goog-Upload-Status:
+      - active
+      X-Goog-Upload-Url:
+      - https://www.googleapis.com/upload/drive/v3/files?fields=*&upload_id=AEnB2UopqqlCXAHYe8b07uwWZQRzhIv4kYk3yF08HZzX0aig4-r2XaERS34iO_bBOVOPOHqL9u-ZXGpchKFqV6JfCDDs8PGEIGZaNCHKkc2LhuJYtzbSg-g&upload_protocol=resumable
+      X-Goog-Upload-Control-Url:
+      - https://www.googleapis.com/upload/drive/v3/files?fields=*&upload_id=AEnB2UopqqlCXAHYe8b07uwWZQRzhIv4kYk3yF08HZzX0aig4-r2XaERS34iO_bBOVOPOHqL9u-ZXGpchKFqV6JfCDDs8PGEIGZaNCHKkc2LhuJYtzbSg-g&upload_protocol=resumable
+      X-Goog-Upload-Chunk-Granularity:
+      - '262144'
+      X-Goog-Upload-Header-Vary:
+      - Origin
+      - X-Origin
+      X-Goog-Upload-Header-X-Google-Backends:
+      - vkgf2:4564
+      X-Goog-Upload-Header-X-Google-Session-Info:
+      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTM4cmJnaGZoNGk0amJja29ycWZxMG03bzRyYmZvdGp0LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSloSR3lhMjkuQ2ktekEwUVl6V0cwT254VldVTmU5TVFHdVc2NmxnRXBrQ0UwTHFpSXp3TlRCbGR0cWN0UEJfaEtXZEVWdkVJN0RnMAQ6DTEvX3NWWklnWTV0aH4
+      X-Goog-Upload-Header-Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      X-Goog-Upload-Header-Pragma:
+      - no-cache
+      X-Goog-Upload-Header-Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      X-Goog-Upload-Header-Date:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 14 Dec 2016 00:59:15 GMT
+      Server:
+      - UploadServer
+      Content-Type:
+      - text/html; charset=UTF-8
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:16 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=*&upload_id=AEnB2UopqqlCXAHYe8b07uwWZQRzhIv4kYk3yF08HZzX0aig4-r2XaERS34iO_bBOVOPOHqL9u-ZXGpchKFqV6JfCDDs8PGEIGZaNCHKkc2LhuJYtzbSg-g&upload_protocol=resumable
+    body:
+      encoding: UTF-8
+      string: !binary |-
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAzCAYAAADVY1sUAAAKQ2lDQ1BJQ0Mg
+        cHJvZmlsZQAAeNqdU3dYk/cWPt/3ZQ9WQtjwsZdsgQAiI6wIyBBZohCSAGGE
+        EBJAxYWIClYUFRGcSFXEgtUKSJ2I4qAouGdBiohai1VcOO4f3Ke1fXrv7e37
+        1/u855zn/M55zw+AERImkeaiagA5UoU8Otgfj09IxMm9gAIVSOAEIBDmy8Jn
+        BcUAAPADeXh+dLA//AGvbwACAHDVLiQSx+H/g7pQJlcAIJEA4CIS5wsBkFIA
+        yC5UyBQAyBgAsFOzZAoAlAAAbHl8QiIAqg0A7PRJPgUA2KmT3BcA2KIcqQgA
+        jQEAmShHJAJAuwBgVYFSLALAwgCgrEAiLgTArgGAWbYyRwKAvQUAdo5YkA9A
+        YACAmUIszAAgOAIAQx4TzQMgTAOgMNK/4KlfcIW4SAEAwMuVzZdL0jMUuJXQ
+        Gnfy8ODiIeLCbLFCYRcpEGYJ5CKcl5sjE0jnA0zODAAAGvnRwf44P5Dn5uTh
+        5mbnbO/0xaL+a/BvIj4h8d/+vIwCBAAQTs/v2l/l5dYDcMcBsHW/a6lbANpW
+        AGjf+V0z2wmgWgrQevmLeTj8QB6eoVDIPB0cCgsL7SViob0w44s+/zPhb+CL
+        fvb8QB7+23rwAHGaQJmtwKOD/XFhbnauUo7nywRCMW735yP+x4V//Y4p0eI0
+        sVwsFYrxWIm4UCJNx3m5UpFEIcmV4hLpfzLxH5b9CZN3DQCshk/ATrYHtcts
+        wH7uAQKLDljSdgBAfvMtjBoLkQAQZzQyefcAAJO/+Y9AKwEAzZek4wAAvOgY
+        XKiUF0zGCAAARKCBKrBBBwzBFKzADpzBHbzAFwJhBkRADCTAPBBCBuSAHAqh
+        GJZBGVTAOtgEtbADGqARmuEQtMExOA3n4BJcgetwFwZgGJ7CGLyGCQRByAgT
+        YSE6iBFijtgizggXmY4EImFINJKApCDpiBRRIsXIcqQCqUJqkV1II/ItchQ5
+        jVxA+pDbyCAyivyKvEcxlIGyUQPUAnVAuagfGorGoHPRdDQPXYCWomvRGrQe
+        PYC2oqfRS+h1dAB9io5jgNExDmaM2WFcjIdFYIlYGibHFmPlWDVWjzVjHVg3
+        dhUbwJ5h7wgkAouAE+wIXoQQwmyCkJBHWExYQ6gl7CO0EroIVwmDhDHCJyKT
+        qE+0JXoS+cR4YjqxkFhGrCbuIR4hniVeJw4TX5NIJA7JkuROCiElkDJJC0lr
+        SNtILaRTpD7SEGmcTCbrkG3J3uQIsoCsIJeRt5APkE+S+8nD5LcUOsWI4kwJ
+        oiRSpJQSSjVlP+UEpZ8yQpmgqlHNqZ7UCKqIOp9aSW2gdlAvU4epEzR1miXN
+        mxZDy6Qto9XQmmlnafdoL+l0ugndgx5Fl9CX0mvoB+nn6YP0dwwNhg2Dx0hi
+        KBlrGXsZpxi3GS+ZTKYF05eZyFQw1zIbmWeYD5hvVVgq9ip8FZHKEpU6lVaV
+        fpXnqlRVc1U/1XmqC1SrVQ+rXlZ9pkZVs1DjqQnUFqvVqR1Vu6k2rs5Sd1KP
+        UM9RX6O+X/2C+mMNsoaFRqCGSKNUY7fGGY0hFsYyZfFYQtZyVgPrLGuYTWJb
+        svnsTHYF+xt2L3tMU0NzqmasZpFmneZxzQEOxrHg8DnZnErOIc4NznstAy0/
+        LbHWaq1mrX6tN9p62r7aYu1y7Rbt69rvdXCdQJ0snfU6bTr3dQm6NrpRuoW6
+        23XP6j7TY+t56Qn1yvUO6d3RR/Vt9KP1F+rv1u/RHzcwNAg2kBlsMThj8MyQ
+        Y+hrmGm40fCE4agRy2i6kcRoo9FJoye4Ju6HZ+M1eBc+ZqxvHGKsNN5l3Gs8
+        YWJpMtukxKTF5L4pzZRrmma60bTTdMzMyCzcrNisyeyOOdWca55hvtm82/yN
+        haVFnMVKizaLx5balnzLBZZNlvesmFY+VnlW9VbXrEnWXOss623WV2xQG1eb
+        DJs6m8u2qK2brcR2m23fFOIUjynSKfVTbtox7PzsCuya7AbtOfZh9iX2bfbP
+        HcwcEh3WO3Q7fHJ0dcx2bHC866ThNMOpxKnD6VdnG2ehc53zNRemS5DLEpd2
+        lxdTbaeKp26fesuV5RruutK10/Wjm7ub3K3ZbdTdzD3Ffav7TS6bG8ldwz3v
+        QfTw91jicczjnaebp8LzkOcvXnZeWV77vR5Ps5wmntYwbcjbxFvgvct7YDo+
+        PWX6zukDPsY+Ap96n4e+pr4i3z2+I37Wfpl+B/ye+zv6y/2P+L/hefIW8U4F
+        YAHBAeUBvYEagbMDawMfBJkEpQc1BY0FuwYvDD4VQgwJDVkfcpNvwBfyG/lj
+        M9xnLJrRFcoInRVaG/owzCZMHtYRjobPCN8Qfm+m+UzpzLYIiOBHbIi4H2kZ
+        mRf5fRQpKjKqLupRtFN0cXT3LNas5Fn7Z72O8Y+pjLk722q2cnZnrGpsUmxj
+        7Ju4gLiquIF4h/hF8ZcSdBMkCe2J5MTYxD2J43MC52yaM5zkmlSWdGOu5dyi
+        uRfm6c7Lnnc8WTVZkHw4hZgSl7I/5YMgQlAvGE/lp25NHRPyhJuFT0W+oo2i
+        UbG3uEo8kuadVpX2ON07fUP6aIZPRnXGMwlPUit5kRmSuSPzTVZE1t6sz9lx
+        2S05lJyUnKNSDWmWtCvXMLcot09mKyuTDeR55m3KG5OHyvfkI/lz89sVbIVM
+        0aO0Uq5QDhZML6greFsYW3i4SL1IWtQz32b+6vkjC4IWfL2QsFC4sLPYuHhZ
+        8eAiv0W7FiOLUxd3LjFdUrpkeGnw0n3LaMuylv1Q4lhSVfJqedzyjlKD0qWl
+        QyuCVzSVqZTJy26u9Fq5YxVhlWRV72qX1VtWfyoXlV+scKyorviwRrjm4ldO
+        X9V89Xlt2treSrfK7etI66Trbqz3Wb+vSr1qQdXQhvANrRvxjeUbX21K3nSh
+        emr1js20zcrNAzVhNe1bzLas2/KhNqP2ep1/XctW/a2rt77ZJtrWv913e/MO
+        gx0VO97vlOy8tSt4V2u9RX31btLugt2PGmIbur/mft24R3dPxZ6Pe6V7B/ZF
+        7+tqdG9s3K+/v7IJbVI2jR5IOnDlm4Bv2pvtmne1cFoqDsJB5cEn36Z8e+NQ
+        6KHOw9zDzd+Zf7f1COtIeSvSOr91rC2jbaA9ob3v6IyjnR1eHUe+t/9+7zHj
+        Y3XHNY9XnqCdKD3x+eSCk+OnZKeenU4/PdSZ3Hn3TPyZa11RXb1nQ8+ePxd0
+        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
+        s5RRAAAAAElFTkSuQmCC
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:16 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Command:
+      - upload, finalize
+      X-Goog-Upload-Offset:
+      - '0'
+      Content-Length:
+      - '4920'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UopqqlCXAHYe8b07uwWZQRzhIv4kYk3yF08HZzX0aig4-r2XaERS34iO_bBOVOPOHqL9u-ZXGpchKFqV6JfCDDs8PGEIGZaNCHKkc2LhuJYtzbSg-g
+      X-Goog-Upload-Status:
+      - final
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Content-Length:
+      - '2505'
+      Server:
+      - UploadServer
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "0B-GFJI5FWVGyZ0VCZkFMWGJYM0U",
+         "name": "original_1_image.png",
+         "mimeType": "image/png",
+         "description": "paperclip file on google drive",
+         "starred": false,
+         "trashed": false,
+         "explicitlyTrashed": false,
+         "parents": [
+          "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+         ],
+         "spaces": [
+          "drive"
+         ],
+         "version": "146",
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyZ0VCZkFMWGJYM0U&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyZ0VCZkFMWGJYM0U/view?usp=drivesdk",
+         "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+         "hasThumbnail": true,
+         "thumbnailLink": "https://lh4.googleusercontent.com/GWO1yKKbZe1G5J39TfbtgKMku4uyVCuZ4nZ3_D10iXvBMpDbu7kajLmGRPrv_1voi8DiUA=s220",
+         "thumbnailVersion": "1",
+         "viewedByMe": false,
+         "createdTime": "2016-12-14T00:59:16.388Z",
+         "modifiedTime": "2016-12-14T00:59:16.388Z",
+         "modifiedByMeTime": "2016-12-14T00:59:16.388Z",
+         "modifiedByMe": true,
+         "owners": [
+          {
+           "kind": "drive#user",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+           "me": true,
+           "permissionId": "11275349978511166647",
+           "emailAddress": "popasnacks@gmail.com"
+          }
+         ],
+         "lastModifyingUser": {
+          "kind": "drive#user",
+          "displayName": "Popasnacks SAS",
+          "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+          "me": true,
+          "permissionId": "11275349978511166647",
+          "emailAddress": "popasnacks@gmail.com"
+         },
+         "shared": false,
+         "ownedByMe": true,
+         "capabilities": {
+          "canEdit": true,
+          "canComment": true,
+          "canShare": true,
+          "canCopy": true,
+          "canReadRevisions": true
+         },
+         "viewersCanCopyContent": true,
+         "writersCanShare": true,
+         "permissions": [
+          {
+           "kind": "drive#permission",
+           "id": "11275349978511166647",
+           "type": "user",
+           "emailAddress": "popasnacks@gmail.com",
+           "role": "owner",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+          }
+         ],
+         "originalFilename": "original_1_image.png",
+         "fullFileExtension": "png",
+         "fileExtension": "png",
+         "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+         "size": "4920",
+         "quotaBytesUsed": "4920",
+         "headRevisionId": "0B-GFJI5FWVGyZTVzbkJkZW56cEdQcU02K3RPZGxJeG5GTm04PQ",
+         "imageMediaMetadata": {
+          "width": 50,
+          "height": 51,
+          "rotation": 0
+         },
+         "isAppAuthorized": true
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:17 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?fields=*&q=name%20contains%20%27medium_1_image_medium_medium_1_image_medium.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyb3NMQUhyWUNsZFE%27%20in%20parents
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#fileList",
+         "files": [
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyYXNPYWNiRnVSbjQ",
+           "name": "medium_1_image_medium.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "142",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyYXNPYWNiRnVSbjQ&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyYXNPYWNiRnVSbjQ/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh6.googleusercontent.com/5UJIEbDGIz8FqfUEpG0YgT-h65IW_vYwlCN2hOQPbpfhyMsucR7mkfbVrNxTWFKukSZTcQ=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:54:28.373Z",
+           "modifiedTime": "2016-12-14T00:54:28.373Z",
+           "modifiedByMeTime": "2016-12-14T00:54:28.373Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "medium_1_image_medium.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "28bf35ed4ad900e1c803676f2296defe",
+           "size": "34090",
+           "quotaBytesUsed": "34090",
+           "headRevisionId": "0B-GFJI5FWVGyQkhpUDh2S2ZNeDNQeDkzNTN4UTRnT2JoMklJPQ",
+           "imageMediaMetadata": {
+            "width": 294,
+            "height": 300,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyVTZhUWRRTmJZSEk",
+           "name": "medium_1_image_medium.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "128",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyVTZhUWRRTmJZSEk&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyVTZhUWRRTmJZSEk/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh3.googleusercontent.com/xCF8CCyW7a84SZnVedMr1PQ6mIzcXuY6peeonjeYf-iocQG46HBr8dvk0xDyKM0fJEp-wg=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:49:05.487Z",
+           "modifiedTime": "2016-12-14T00:49:05.487Z",
+           "modifiedByMeTime": "2016-12-14T00:49:05.487Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "medium_1_image_medium.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "3fda7c64bc0e30397797c74586bb881d",
+           "size": "34090",
+           "quotaBytesUsed": "34090",
+           "headRevisionId": "0B-GFJI5FWVGyR0VqVFVXUU1NbTZMOEZST09UUld0Y29ENWVVPQ",
+           "imageMediaMetadata": {
+            "width": 294,
+            "height": 300,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyR291dU4tX1FwYVU",
+           "name": "medium_1_image_medium.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "116",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyR291dU4tX1FwYVU&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyR291dU4tX1FwYVU/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh3.googleusercontent.com/SgMTZM2rvH_BmP_ZpW7mIx62zdFzMNnc2DSYXzLwR785xWltJTamlO4cnSiNTistV0N_XQ=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:46:28.676Z",
+           "modifiedTime": "2016-12-14T00:46:28.676Z",
+           "modifiedByMeTime": "2016-12-14T00:46:28.676Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "medium_1_image_medium.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "a763497ed59c3bcfc353d1175df09436",
+           "size": "34090",
+           "quotaBytesUsed": "34090",
+           "headRevisionId": "0B-GFJI5FWVGyaUlWT2R6VHhHMHNyZHNrTnhqMkVmOUd5R0YwPQ",
+           "imageMediaMetadata": {
+            "width": 294,
+            "height": 300,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyQlJ3SnFiTy11ZFk",
+           "name": "medium_1_image_medium.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "105",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyQlJ3SnFiTy11ZFk&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyQlJ3SnFiTy11ZFk/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh4.googleusercontent.com/Hl63DfTDIHJ-xpWrhq7446BODUtJQYxwMyBSKRsuKpRdLPxumRPW_qGoXBCgh0C_O95yaA=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:45:45.173Z",
+           "modifiedTime": "2016-12-14T00:45:45.173Z",
+           "modifiedByMeTime": "2016-12-14T00:45:45.173Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "medium_1_image_medium.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "b3d93e17872f4c07a229a54744b6b9b8",
+           "size": "34090",
+           "quotaBytesUsed": "34090",
+           "headRevisionId": "0B-GFJI5FWVGyYkNNV0lzdVlCSEMzMHhFbGcyYkFpdHJJQVRnPQ",
+           "imageMediaMetadata": {
+            "width": 294,
+            "height": 300,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:17 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyYXNPYWNiRnVSbjQ?fields=*
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "0B-GFJI5FWVGyYXNPYWNiRnVSbjQ",
+         "name": "medium_1_image_medium.png",
+         "mimeType": "image/png",
+         "description": "paperclip file on google drive",
+         "starred": false,
+         "trashed": true,
+         "explicitlyTrashed": true,
+         "parents": [
+          "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+         ],
+         "spaces": [
+          "drive"
+         ],
+         "version": "142",
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyYXNPYWNiRnVSbjQ&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyYXNPYWNiRnVSbjQ/view?usp=drivesdk",
+         "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+         "hasThumbnail": true,
+         "thumbnailLink": "https://lh6.googleusercontent.com/5UJIEbDGIz8FqfUEpG0YgT-h65IW_vYwlCN2hOQPbpfhyMsucR7mkfbVrNxTWFKukSZTcQ=s220",
+         "thumbnailVersion": "1",
+         "viewedByMe": false,
+         "createdTime": "2016-12-14T00:54:28.373Z",
+         "modifiedTime": "2016-12-14T00:54:28.373Z",
+         "modifiedByMeTime": "2016-12-14T00:54:28.373Z",
+         "modifiedByMe": true,
+         "owners": [
+          {
+           "kind": "drive#user",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+           "me": true,
+           "permissionId": "11275349978511166647",
+           "emailAddress": "popasnacks@gmail.com"
+          }
+         ],
+         "lastModifyingUser": {
+          "kind": "drive#user",
+          "displayName": "Popasnacks SAS",
+          "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+          "me": true,
+          "permissionId": "11275349978511166647",
+          "emailAddress": "popasnacks@gmail.com"
+         },
+         "shared": false,
+         "ownedByMe": true,
+         "capabilities": {
+          "canEdit": true,
+          "canComment": true,
+          "canShare": true,
+          "canCopy": true,
+          "canReadRevisions": true
+         },
+         "viewersCanCopyContent": true,
+         "writersCanShare": true,
+         "permissions": [
+          {
+           "kind": "drive#permission",
+           "id": "11275349978511166647",
+           "type": "user",
+           "emailAddress": "popasnacks@gmail.com",
+           "role": "owner",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+          }
+         ],
+         "originalFilename": "medium_1_image_medium.png",
+         "fullFileExtension": "png",
+         "fileExtension": "png",
+         "md5Checksum": "28bf35ed4ad900e1c803676f2296defe",
+         "size": "34090",
+         "quotaBytesUsed": "34090",
+         "headRevisionId": "0B-GFJI5FWVGyQkhpUDh2S2ZNeDNQeDkzNTN4UTRnT2JoMklJPQ",
+         "imageMediaMetadata": {
+          "width": 294,
+          "height": 300,
+          "rotation": 0
+         },
+         "isAppAuthorized": true
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:17 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=*
+    body:
+      encoding: UTF-8
+      string: '{"description":"paperclip file on google drive","name":"medium_1_image_medium.png","parents":["0B-GFJI5FWVGyb3NMQUhyWUNsZFE"]}'
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Protocol:
+      - resumable
+      X-Goog-Upload-Command:
+      - start
+      X-Goog-Upload-Header-Content-Length:
+      - '34090'
+      X-Goog-Upload-Header-Content-Type:
+      - image/png
+      Content-Length:
+      - '126'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UpNe1GH_4TvrsIh2C8eygrUatjqGJ9gLXBbe8Aw6Ae_gz7RwZwkAZQMz_tt0XVeh2QaXJEG2W3SYHtAfyNrQ3Ha8Du1Wngt_ztRggjXat3pYde7pKQ
+      X-Goog-Upload-Status:
+      - active
+      X-Goog-Upload-Url:
+      - https://www.googleapis.com/upload/drive/v3/files?fields=*&upload_id=AEnB2UpNe1GH_4TvrsIh2C8eygrUatjqGJ9gLXBbe8Aw6Ae_gz7RwZwkAZQMz_tt0XVeh2QaXJEG2W3SYHtAfyNrQ3Ha8Du1Wngt_ztRggjXat3pYde7pKQ&upload_protocol=resumable
+      X-Goog-Upload-Control-Url:
+      - https://www.googleapis.com/upload/drive/v3/files?fields=*&upload_id=AEnB2UpNe1GH_4TvrsIh2C8eygrUatjqGJ9gLXBbe8Aw6Ae_gz7RwZwkAZQMz_tt0XVeh2QaXJEG2W3SYHtAfyNrQ3Ha8Du1Wngt_ztRggjXat3pYde7pKQ&upload_protocol=resumable
+      X-Goog-Upload-Chunk-Granularity:
+      - '262144'
+      X-Goog-Upload-Header-Vary:
+      - Origin
+      - X-Origin
+      X-Goog-Upload-Header-X-Google-Backends:
+      - vkaq81:4609
+      X-Goog-Upload-Header-X-Google-Session-Info:
+      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTM4cmJnaGZoNGk0amJja29ycWZxMG03bzRyYmZvdGp0LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSloSR3lhMjkuQ2ktekEwUVl6V0cwT254VldVTmU5TVFHdVc2NmxnRXBrQ0UwTHFpSXp3TlRCbGR0cWN0UEJfaEtXZEVWdkVJN0RnMAQ6DTEvX3NWWklnWTV0aH4
+      X-Goog-Upload-Header-Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      X-Goog-Upload-Header-Pragma:
+      - no-cache
+      X-Goog-Upload-Header-Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      X-Goog-Upload-Header-Date:
+      - Wed, 14 Dec 2016 00:59:17 GMT
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 14 Dec 2016 00:59:18 GMT
+      Server:
+      - UploadServer
+      Content-Type:
+      - text/html; charset=UTF-8
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:18 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=*&upload_id=AEnB2UpNe1GH_4TvrsIh2C8eygrUatjqGJ9gLXBbe8Aw6Ae_gz7RwZwkAZQMz_tt0XVeh2QaXJEG2W3SYHtAfyNrQ3Ha8Du1Wngt_ztRggjXat3pYde7pKQ&upload_protocol=resumable
+    body:
+      encoding: UTF-8
+      string: !binary |-
+        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
+        OjE1LTA1OjAwLqWv9QAAAABJRU5ErkJggg==
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:18 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Command:
+      - upload, finalize
+      X-Goog-Upload-Offset:
+      - '0'
+      Content-Length:
+      - '34090'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UpNe1GH_4TvrsIh2C8eygrUatjqGJ9gLXBbe8Aw6Ae_gz7RwZwkAZQMz_tt0XVeh2QaXJEG2W3SYHtAfyNrQ3Ha8Du1Wngt_ztRggjXat3pYde7pKQ
+      X-Goog-Upload-Status:
+      - final
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:19 GMT
+      Content-Length:
+      - '2519'
+      Server:
+      - UploadServer
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "0B-GFJI5FWVGyTnNEaWFIMnM2eEE",
+         "name": "medium_1_image_medium.png",
+         "mimeType": "image/png",
+         "description": "paperclip file on google drive",
+         "starred": false,
+         "trashed": false,
+         "explicitlyTrashed": false,
+         "parents": [
+          "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+         ],
+         "spaces": [
+          "drive"
+         ],
+         "version": "149",
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyTnNEaWFIMnM2eEE&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyTnNEaWFIMnM2eEE/view?usp=drivesdk",
+         "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+         "hasThumbnail": true,
+         "thumbnailLink": "https://lh4.googleusercontent.com/AsYgtjIFkKA5rnen6yw2kYBt02wOqjGcABZncIg23kDCRquovTgH-YU76y0DgTBjoO2IIA=s220",
+         "thumbnailVersion": "1",
+         "viewedByMe": false,
+         "createdTime": "2016-12-14T00:59:18.622Z",
+         "modifiedTime": "2016-12-14T00:59:18.622Z",
+         "modifiedByMeTime": "2016-12-14T00:59:18.622Z",
+         "modifiedByMe": true,
+         "owners": [
+          {
+           "kind": "drive#user",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+           "me": true,
+           "permissionId": "11275349978511166647",
+           "emailAddress": "popasnacks@gmail.com"
+          }
+         ],
+         "lastModifyingUser": {
+          "kind": "drive#user",
+          "displayName": "Popasnacks SAS",
+          "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+          "me": true,
+          "permissionId": "11275349978511166647",
+          "emailAddress": "popasnacks@gmail.com"
+         },
+         "shared": false,
+         "ownedByMe": true,
+         "capabilities": {
+          "canEdit": true,
+          "canComment": true,
+          "canShare": true,
+          "canCopy": true,
+          "canReadRevisions": true
+         },
+         "viewersCanCopyContent": true,
+         "writersCanShare": true,
+         "permissions": [
+          {
+           "kind": "drive#permission",
+           "id": "11275349978511166647",
+           "type": "user",
+           "emailAddress": "popasnacks@gmail.com",
+           "role": "owner",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+          }
+         ],
+         "originalFilename": "medium_1_image_medium.png",
+         "fullFileExtension": "png",
+         "fileExtension": "png",
+         "md5Checksum": "30cf708e34b2ab0d6614546ff2f3a358",
+         "size": "34090",
+         "quotaBytesUsed": "34090",
+         "headRevisionId": "0B-GFJI5FWVGydFB5WmZvTG9WL3JIUGFBQUZmUU1OUHkwajVFPQ",
+         "imageMediaMetadata": {
+          "width": 294,
+          "height": 300,
+          "rotation": 0
+         },
+         "isAppAuthorized": true
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:19 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?fields=*&q=name%20contains%20%27original_1_image.png%27%20and%20%270B-GFJI5FWVGyb3NMQUhyWUNsZFE%27%20in%20parents
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:19 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Wed, 14 Dec 2016 00:59:19 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:19 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#fileList",
+         "files": [
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyZ0VCZkFMWGJYM0U",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": false,
+           "explicitlyTrashed": false,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "146",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyZ0VCZkFMWGJYM0U&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyZ0VCZkFMWGJYM0U/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh5.googleusercontent.com/nb2qar5jWJW18CjdHlkuE2rXAWzsGwMIn12136Io7VNlD_lnOweyrTaEq6U4fWZHafblhA=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:59:16.388Z",
+           "modifiedTime": "2016-12-14T00:59:16.388Z",
+           "modifiedByMeTime": "2016-12-14T00:59:16.388Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGyZTVzbkJkZW56cEdQcU02K3RPZGxJeG5GTm04PQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyMDBYa0t0a1RMaE0",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "140",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyMDBYa0t0a1RMaE0&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyMDBYa0t0a1RMaE0/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh4.googleusercontent.com/KI9Eqm3oollyivFQ39FOaN-hQ5tirzdetPyUCOp420PAZKrWOjeIxaioK512RUw7ndpN3w=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:54:26.844Z",
+           "modifiedTime": "2016-12-14T00:54:26.844Z",
+           "modifiedByMeTime": "2016-12-14T00:54:26.844Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGya2NZOVM3YWNEbXZDOU41UmlsbU9hVkNSdURjPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyd1FKcVFDaVdJclk",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "130",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyd1FKcVFDaVdJclk&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyd1FKcVFDaVdJclk/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh4.googleusercontent.com/WfbLB85yeS0Y1GL7BM_9nDBwXoylS9YP0a39_-QXsTeZI-0UdchE320Fn7I8e2o03g_m5w=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:49:03.691Z",
+           "modifiedTime": "2016-12-14T00:49:03.691Z",
+           "modifiedByMeTime": "2016-12-14T00:49:03.691Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGyekZSU1p5MmdNRURkdXV3cTFQaVpOTEFQSFQ4PQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyanJkMDNmbmtwWDg",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "118",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyanJkMDNmbmtwWDg&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyanJkMDNmbmtwWDg/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh3.googleusercontent.com/fDz5jLc8OEmS002oTgR_JYbtqxKc8M5JF8HhBC8k_IPwxWKSLDVvi2pmRYBLiL6l7kHdJQ=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:46:27.036Z",
+           "modifiedTime": "2016-12-14T00:46:27.036Z",
+           "modifiedByMeTime": "2016-12-14T00:46:27.036Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGydGxzSkxJZ3R6Mk1DY1BDdHRyL2IrRWVrSVRFPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGybUJmcGh5Nk9YR28",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "103",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGybUJmcGh5Nk9YR28&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGybUJmcGh5Nk9YR28/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh3.googleusercontent.com/k-hjuR-sYu461HKRoArwWV_koJlAaom2esiRSvvAhirWK094yrFs_d6zUKDMup6_wPZdMw=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": false,
+           "createdTime": "2016-12-14T00:45:43.658Z",
+           "modifiedTime": "2016-12-14T00:45:43.658Z",
+           "modifiedByMeTime": "2016-12-14T00:45:43.658Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGyV2FGQWZpNXZ4dFJGUmttTWtZRjVoamZiSnVvPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          },
+          {
+           "kind": "drive#file",
+           "id": "0B-GFJI5FWVGyX2pYWFdlXzI3WGM",
+           "name": "original_1_image.png",
+           "mimeType": "image/png",
+           "description": "paperclip file on google drive",
+           "starred": false,
+           "trashed": true,
+           "explicitlyTrashed": true,
+           "parents": [
+            "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+           ],
+           "spaces": [
+            "drive"
+           ],
+           "version": "94",
+           "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyX2pYWFdlXzI3WGM&export=download",
+           "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyX2pYWFdlXzI3WGM/view?usp=drivesdk",
+           "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+           "hasThumbnail": true,
+           "thumbnailLink": "https://lh3.googleusercontent.com/EnRP-rxFd1RlPd5NaRA_3dz6kSeCa0ldSJ3FELnJly1v8BKhqmbN28QfubATKUqcsyKI7w=s220",
+           "thumbnailVersion": "1",
+           "viewedByMe": true,
+           "viewedByMeTime": "2016-12-13T20:59:23.837Z",
+           "createdTime": "2016-12-13T20:54:21.353Z",
+           "modifiedTime": "2016-12-13T20:54:21.353Z",
+           "modifiedByMeTime": "2016-12-13T20:54:21.353Z",
+           "modifiedByMe": true,
+           "owners": [
+            {
+             "kind": "drive#user",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+             "me": true,
+             "permissionId": "11275349978511166647",
+             "emailAddress": "popasnacks@gmail.com"
+            }
+           ],
+           "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Popasnacks SAS",
+            "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+            "me": true,
+            "permissionId": "11275349978511166647",
+            "emailAddress": "popasnacks@gmail.com"
+           },
+           "shared": false,
+           "ownedByMe": true,
+           "capabilities": {
+            "canEdit": true,
+            "canComment": true,
+            "canShare": true,
+            "canCopy": true,
+            "canReadRevisions": true
+           },
+           "viewersCanCopyContent": true,
+           "writersCanShare": true,
+           "permissions": [
+            {
+             "kind": "drive#permission",
+             "id": "11275349978511166647",
+             "type": "user",
+             "emailAddress": "popasnacks@gmail.com",
+             "role": "owner",
+             "displayName": "Popasnacks SAS",
+             "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+            }
+           ],
+           "originalFilename": "original_1_image.png",
+           "fullFileExtension": "png",
+           "fileExtension": "png",
+           "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+           "size": "4920",
+           "quotaBytesUsed": "4920",
+           "headRevisionId": "0B-GFJI5FWVGyNFRwRmxjOGZkdmFqYytYZ0pXM2VCcVE1Vm9JPQ",
+           "imageMediaMetadata": {
+            "width": 50,
+            "height": 51,
+            "rotation": 0
+           },
+           "isAppAuthorized": true
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:19 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyZ0VCZkFMWGJYM0U?fields=*
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 14 Dec 2016 00:59:19 GMT
+      Authorization:
+      - Bearer ya29.Ci-zA0QYzWG0OnxVWUNe9MQGuW66lgEpkCE0LqiIzwNTBldtqctPB_hKWdEVvEI7Dg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Wed, 14 Dec 2016 00:59:20 GMT
+      Date:
+      - Wed, 14 Dec 2016 00:59:20 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "0B-GFJI5FWVGyZ0VCZkFMWGJYM0U",
+         "name": "original_1_image.png",
+         "mimeType": "image/png",
+         "description": "paperclip file on google drive",
+         "starred": false,
+         "trashed": false,
+         "explicitlyTrashed": false,
+         "parents": [
+          "0B-GFJI5FWVGyb3NMQUhyWUNsZFE"
+         ],
+         "spaces": [
+          "drive"
+         ],
+         "version": "146",
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyZ0VCZkFMWGJYM0U&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyZ0VCZkFMWGJYM0U/view?usp=drivesdk",
+         "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_image_list.png",
+         "hasThumbnail": true,
+         "thumbnailLink": "https://lh6.googleusercontent.com/SxnLW8ZE6Tza97GpVOWFw4FI3dkvUZ0MDIKdtex5AbEXDV15lC3r-fktr44xlCBDU11mwA=s220",
+         "thumbnailVersion": "1",
+         "viewedByMe": false,
+         "createdTime": "2016-12-14T00:59:16.388Z",
+         "modifiedTime": "2016-12-14T00:59:16.388Z",
+         "modifiedByMeTime": "2016-12-14T00:59:16.388Z",
+         "modifiedByMe": true,
+         "owners": [
+          {
+           "kind": "drive#user",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+           "me": true,
+           "permissionId": "11275349978511166647",
+           "emailAddress": "popasnacks@gmail.com"
+          }
+         ],
+         "lastModifyingUser": {
+          "kind": "drive#user",
+          "displayName": "Popasnacks SAS",
+          "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg",
+          "me": true,
+          "permissionId": "11275349978511166647",
+          "emailAddress": "popasnacks@gmail.com"
+         },
+         "shared": false,
+         "ownedByMe": true,
+         "capabilities": {
+          "canEdit": true,
+          "canComment": true,
+          "canShare": true,
+          "canCopy": true,
+          "canReadRevisions": true
+         },
+         "viewersCanCopyContent": true,
+         "writersCanShare": true,
+         "permissions": [
+          {
+           "kind": "drive#permission",
+           "id": "11275349978511166647",
+           "type": "user",
+           "emailAddress": "popasnacks@gmail.com",
+           "role": "owner",
+           "displayName": "Popasnacks SAS",
+           "photoLink": "https://lh5.googleusercontent.com/-ctZIkb02S2k/AAAAAAAAAAI/AAAAAAAAABY/Dh65qlGkkrY/s64/photo.jpg"
+          }
+         ],
+         "originalFilename": "original_1_image.png",
+         "fullFileExtension": "png",
+         "fileExtension": "png",
+         "md5Checksum": "c5591c5ae4d01cae00d27b1cfb95fb2e",
+         "size": "4920",
+         "quotaBytesUsed": "4920",
+         "headRevisionId": "0B-GFJI5FWVGyZTVzbkJkZW56cEdQcU02K3RPZGxJeG5GTm04PQ",
+         "imageMediaMetadata": {
+          "width": 50,
+          "height": 51,
+          "rotation": 0
+         },
+         "isAppAuthorized": true
+        }
+    http_version: 
+  recorded_at: Wed, 14 Dec 2016 00:59:20 GMT
+recorded_with: VCR 3.0.3

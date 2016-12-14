@@ -14,16 +14,15 @@ describe 'Paperclip::Storage::GoogleDrive' do
   end
 
   context ' GoogleDrive load and save and image' do
-    it 'should create an image' do
-      file = File.new("spec/fixtures/image.png", 'rb')
-      @dummy.avatar = file
-      expect(@dummy.avatar).to_not be_blank
-      expect(@dummy.avatar).to be_present
-      @dummy.save
-      @dummy.avatar.url
-      # binding.pry
-      # 1
-      # dummy_class
+    it 'should upload an image' do
+      VCR.use_cassette('upload_image') do
+        file = File.new("spec/fixtures/image.png", 'rb')
+        @dummy.avatar = file
+        expect(@dummy.avatar).to_not be_blank
+        expect(@dummy.avatar).to be_present
+        expect(@dummy.save).to be true
+        expect(@dummy.avatar.url).to be_present
+      end
     end
   end
 end
