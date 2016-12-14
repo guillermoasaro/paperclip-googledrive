@@ -1,8 +1,9 @@
 # PaperclipGoogleDrive
-[![Gem Version](https://badge.fury.io/rb/paperclip-googledrive.png)](http://badge.fury.io/rb/paperclip-googledrive)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/evinsou/paperclip-googledrive)
+[![GitHub version](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive.svg)](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive)
+[![Code Climate](https://codeclimate.com/github/degzcs/paperclip-googledrive/badges/gpa.svg)](https://codeclimate.com/github/degzcs/paperclip-googledrive)
 
-PaperclipGoogledrive is a gem that extends paperclip storage for Google Drive (V3). Works with Rails 3.x. and later.
+PaperclipGoogledrive is a gem that extends paperclip storage for Google Drive (V3). Works with Rails 3.x. and later. 
+IMPORTANT NOTE: This repo was forked and upgraded to use Google Drive V3.
 
 ## Installation
 
@@ -28,7 +29,7 @@ Google Drive is a free service for file storage files. In order to use this stor
 
 3. Go to "API Manager > Credentials" and click on "OAuth Client ID" before to select "Other" type you must specify `http://localhost` for application home page.
 
-4. Now you will have a Client ID, Client Secret, and Redirect URL. So, download the client_secret_XXXXX.json file and rename it to client_secrete.json.
+4. Now you will have a Client ID, Client Secret, and Redirect URL. So, download the client_secret_XXXXX.json file and rename it to client_secret.json.
 
 5. Run the authorization task:
     ```sh
@@ -54,9 +55,9 @@ end
 ```
 The `:google_drive_client_secret_path` option
 
-Thise is obtained from your Google Drive app settings and the authorization Rake task.
+This is the path of the file which was obtained from your Google Drive app settings and the authorization Rake task.
 
-Example `path/to/client_secret.json`:
+Example of the overridden `path/to/client_secret.json` file:
 ```json
 {
   "client_id": "4444-1111.apps.googleusercontent.com",
@@ -85,7 +86,8 @@ class Product < ActiveRecord::Base
     :google_drive_client_secret_path => "#{Rails.root}/config/client_secret.json"
     :styles => { :medium => "300x300" },
     :google_drive_options => {
-      :path => proc { |style| "#{style}_#{id}_#{photo.original_filename}" }
+      :path => proc { |style| "#{style}_#{id}_#{photo.original_filename}" },
+      :public_folder_id => 'AAAARRRRGGGBBBFFFFadsasdX'
     }
 end
 ```
@@ -105,7 +107,7 @@ Useful links
 
 [Enable the Drive API and SDK](https://developers.google.com/drive/enable-sdk)
 
-[Quickstart](https://developers.google.com/drive/quickstart-ruby#step_1_enable_the_drive_api)
+[Quickstart](https://developers.google.com/drive/v3/web/quickstart/ruby)
 
 ## License
 
