@@ -38,7 +38,7 @@ Google Drive is a free service for file storage files. In order to use this stor
      - the `path/to/client_secret.json` path is the file downloaded from Google console (it will be overrided with the fresh token).
      - the application_name param is the name that you set for the application credentials on Google console.
 
-6. The Rake task will give you an auth url. Simply go to that url (while signed in as the designated uploads owner), authorize the app, then enter code from url in the console. The rake task will output valid `google_drive_credentials.yml` which you can use to connect with GoogleDrive from now on.
+6. The Rake task will give you an auth url. Simply go to that url (while signed in as the designated uploads owner), authorize the app, then enter code from url in the console. The rake task will override valid `client_secret.json` which you can use to connect with GoogleDrive from now on.
 
 7. Create a folder in which the files will be uploaded; note the folder's ID.
 
@@ -49,23 +49,23 @@ Example:
 class Product < ActiveRecord::Base
  has_attached_file :photo,
     :storage => :google_drive,
-    :google_drive_credentials => "#{Rails.root}/config/google_drive_credentials.yml"
+    :google_drive_client_secret_path => "#{Rails.root}/config/client_secret.json"
 end
 ```
-The `:google_drive_credentials` option
+The `:google_drive_client_secret_path` option
 
-This can be a hash or path to a YAML file containing the keys listed in the example below. These are obtained from your Google Drive app settings and the authorization Rake task.
+Thise is obtained from your Google Drive app settings and the authorization Rake task.
 
-Example `config/google_drive.yml`:
-```erb
-application_name: MyApp
-application_version: 1.0.0
-client_id: <%= ENV["CLIENT_ID"] %>
-client_secret: <%= ENV["CLIENT_SECRET"] %>
-access_token: <%= ENV["ACCESS_TOKEN"] %>
-refresh_token: <%= ENV["REFRESH_TOKEN"] %>
+Example `path/to/client_secret.json`:
+```json
+{
+  "client_id": "4444-1111.apps.googleusercontent.com",
+  "client_secret": "1yErh1pR_7asdf8tqdYM2LcuL",
+  "scope": "https://www.googleapis.com/auth/drive",
+  "refresh_token": "1/_sVZIgY5thPetbWDTTTasdDID5Rkvq6UEfYshaDs5dIKoUAKgjE9f"
+}
 ```
-It is good practice to not include the credentials directly in the YAML file. Instead you can set them in environment variables and embed them with ERB.
+It is good practice to not include the credentials directly in the JSON file. Instead you can set them in environment variables and embed them with ERB.
 
 ## Options
 
@@ -75,13 +75,14 @@ This is a hash containing any of the following options:
  - `:path` – block, works similarly to Paperclip's `:path` option
  - `:public_folder_id`- id of folder that must be created in google drive and set public permissions on it
  - `:default_image` - an image in Public folder that used for attachments if attachment is not present
+ - `:application_name` - is the name that you set for the application credentials on Google console.
 
 The :path option should be a block that returns a path that the uploaded file should be saved to. The block yields the attachment style and is executed in the scope of the model instance. For example:
 ```ruby
 class Product < ActiveRecord::Base
   has_attached_file :photo,
     :storage => :google_drive,
-    :google_drive_credentials => "#{Rails.root}/config/google_drive.yml",
+    :google_drive_client_secret_path => "#{Rails.root}/config/client_secret.json"
     :styles => { :medium => "300x300" },
     :google_drive_options => {
       :path => proc { |style| "#{style}_#{id}_#{photo.original_filename}" }
