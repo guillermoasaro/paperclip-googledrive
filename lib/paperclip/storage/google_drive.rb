@@ -124,7 +124,7 @@ module Paperclip
           default_image
         else
           metadata = metadata_by_id(searched_id)
-          metadata.web_content_link #or metadata.web_view_link?
+          metadata.web_view_link #web_content_link #or metadata.web_view_link?
         end
       end
 
@@ -180,7 +180,7 @@ module Paperclip
           title = @google_drive_options[:default_url]
           searched_id = search_for_title(title) # id
           metadata = metadata_by_id(searched_id) unless searched_id.nil?
-          metadata.web_content_link
+          metadata.web_view_link #web_content_link
         else
           'No picture' # ---- ?
         end
