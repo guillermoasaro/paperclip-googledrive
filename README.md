@@ -32,7 +32,7 @@ Google Drive is a free service for file storage files. In order to use this stor
 
 5. Run the authorization task:
     ```sh
-    $ rake google_drive:authorize"[path/to/client_secret.json application_name]"
+    $ rake google_drive:authorize"[path/to/client_secret.json, 'application_name']"
     ```
     NOTE: 
      - the `path/to/client_secret.json` path is the file downloaded from Google console (it will be overrided with the fresh token).
