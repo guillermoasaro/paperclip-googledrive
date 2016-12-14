@@ -32,11 +32,11 @@ Google Drive is a free service for file storage files. In order to use this stor
 
 5. Run the authorization task:
     ```sh
-    $ rake google_drive:authorize"[path/to/client_secret.json, path/to/google_drive_credentials.yml, application_name]"
+    $ rake google_drive:authorize"[path/to/client_secret.json application_name]"
     ```
-    NOTE: the `path/to/client_secret.json` path is the file downloaded from Google console.
-          the `path/to/google_drive_credentials.yml` path point to the file which will be created for this task.
-          the application_name param is the name that you set for the application credentials on Google console.
+    NOTE: 
+     - the `path/to/client_secret.json` path is the file downloaded from Google console (it will be overrided with the fresh token).
+     - the application_name param is the name that you set for the application credentials on Google console.
 
 6. The Rake task will give you an auth url. Simply go to that url (while signed in as the designated uploads owner), authorize the app, then enter code from url in the console. The rake task will output valid `google_drive_credentials.yml` which you can use to connect with GoogleDrive from now on.
 
