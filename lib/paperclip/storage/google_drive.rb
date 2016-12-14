@@ -73,7 +73,7 @@ module Paperclip
         @queued_for_delete.each do |path|
           Paperclip.log("delete #{path}")
           file_id = search_for_title(path)
-          result = google_api_client.delete_file('fileId' => file_id) unless file_id.nil?
+          result = google_api_client.delete_file(file_id) unless file_id.nil?
         end
         @queued_for_delete = []
       end
