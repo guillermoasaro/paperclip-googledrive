@@ -76,16 +76,20 @@ module Paperclip
           if options[:client_id] && options[:client_secret]
             config.client_id = options[:client_id]
             config.client_secret = options[:client_secret]
-          elsif (options[:client_id] && !options[:client_secret]) ||
-                  (!options[:client_id] && options[:client_secret])
-            raise(ArgumentError, 'client_id and client_secret must be both specified or both omitted')
           end
           config
         end
 
         # @param options [ Hash ]
         def validate_options(options)
-          fail(ArgumentError, 'You must specify the application_name option') unless options[:application_name]
+          raise(ArgumentError, 'You must specify the application_name option') unless options[:application_name]
+          raise(ArgumentError, 'client_id and client_secret must be both specified or both omitted') if invalid_client_options?(options)
+        end
+
+        # @param options [ Hash ]
+        # @return [ Boolean ]
+        def invalid_client_options?(options)
+          (options[:client_id] && !options[:client_secret]) || (!options[:client_id] && options[:client_secret])
         end
 
         # @param application_name [ String ]
