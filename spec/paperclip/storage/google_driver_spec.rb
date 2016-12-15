@@ -17,8 +17,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
     end
     it 'should upload an image' do
       VCR.use_cassette('upload_image') do
-        file = File.new('spec/fixtures/image.png', 'rb')
-        @dummy.avatar = file
+        @dummy.avatar = File.new('spec/fixtures/image.png', 'rb')
         expect(@dummy.avatar).to_not be_blank
         expect(@dummy.avatar).to be_present
         expect(@dummy.save).to be true
@@ -40,6 +39,24 @@ describe 'Paperclip::Storage::GoogleDrive' do
     end
   end
   context 'Errors' do
+    it 'raise an error when the file already exist' do
+      VCR.use_cassette('image_already_exists') do
+        rebuild_model(
+        storage: :google_drive,
+        google_drive_client_secret_path: 'spec/support/client_secret.json',
+        styles: { medium: '300x300' },
+        google_drive_options: {
+          application_name: 'test-app',
+          public_folder_id: '0B-GFJI5FWVGyQXFKRzkydldoalk',
+          path: proc { |style| "#{style}_#{id}_#{avatar.original_filename}" }
+          }
+        )
+        @dummy = Dummy.new
+        @dummy.avatar = File.new('spec/fixtures/image.png', 'rb')
+        expect{ @dummy.save }.to raise_error(Paperclip::Storage::GoogleDrive::FileExists)
+      end
+    end
+
     it 'raise an error when it is not passed a google_drive_client_secret_path option' do
        rebuild_model(
         storage: :google_drive,
