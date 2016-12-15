@@ -32,46 +32,67 @@ module Paperclip
       #   scope
       #   scope=
       #   save
-      def self.from_config(config, options = {})
-        fail(ArgumentError, 'You must specify the application_name option') unless options[:application_name]
-
-        if config.is_a?(String)
-          config = Paperclip::GoogleDrive::Config.new(config)
+      class << self
+        def from_config(config_path, options = {})
+          validate_options(options)
+          config = get_cofiguration(config_path, options)
+          credentials = Google::Auth::UserRefreshCredentials.new(
+            client_id: config.client_id,
+            client_secret: config.client_secret,
+            scope: config.scope,
+            redirect_uri: 'urn:ietf:wg:oauth:2.0:oob'
+          )
+          if config.refresh_token
+            credentials.refresh_token = config.refresh_token
+            credentials.fetch_access_token!
+          else
+            $stderr.print("\n1. Open this page:\n%s\n\n" % credentials.authorization_uri)
+            $stderr.print('2. Enter the authorization code shown in the page: ')
+            credentials.code = $stdin.gets.chomp
+            credentials.fetch_access_token!
+            config.refresh_token = credentials.refresh_token
+          end
+          config.save
+          init_drive_service(options[:application_name], credentials)
         end
 
-        config.scope ||= DEFAULT_SCOPE
+        # @param config_path [ String ]
+        # @param options [ Hash ]
+        # @return [ Paperclip::GoogleDrive::Config ]
+        def get_cofiguration(config_path, options)
+          if config_path.is_a?(String)
+            config = Paperclip::GoogleDrive::Config.new(config_path)
+          else
+            raise(ArgumentError, 'You must set a valid config_path path')
+          end
 
-        if options[:client_id] && options[:client_secret]
-          config.client_id = options[:client_id]
-          config.client_secret = options[:client_secret]
-        elsif (options[:client_id] && !options[:client_secret]) ||
-                (!options[:client_id] && options[:client_secret])
-          fail(ArgumentError, 'client_id and client_secret must be both specified or both omitted')
+          config.scope ||= DEFAULT_SCOPE
+
+          if options[:client_id] && options[:client_secret]
+            config.client_id = options[:client_id]
+            config.client_secret = options[:client_secret]
+          elsif (options[:client_id] && !options[:client_secret]) ||
+                  (!options[:client_id] && options[:client_secret])
+            raise(ArgumentError, 'client_id and client_secret must be both specified or both omitted')
+          end
+          config
         end
 
-        credentials = Google::Auth::UserRefreshCredentials.new(
-          client_id: config.client_id,
-          client_secret: config.client_secret,
-          scope: config.scope,
-          redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
-        if config.refresh_token
-          credentials.refresh_token = config.refresh_token
-          credentials.fetch_access_token!
-        else
-          $stderr.print("\n1. Open this page:\n%s\n\n" % credentials.authorization_uri)
-          $stderr.print('2. Enter the authorization code shown in the page: ')
-          credentials.code = $stdin.gets.chomp
-          credentials.fetch_access_token!
-          config.refresh_token = credentials.refresh_token
+        # @param options [ Hash ]
+        def validate_options(options)
+          fail(ArgumentError, 'You must specify the application_name option') unless options[:application_name]
         end
 
-        config.save
-
-        # Initialize the API
-        client = Google::Apis::DriveV3::DriveService.new
-        client.client_options.application_name = options[:application_name]
-        client.authorization = credentials
-        client
+        # @param application_name [ String ]
+        # @param credentials [ Google::Auth::UserRefreshCredentials ]
+        # @return [ Google::Apis::DriveV3::DriveService ]
+        def init_drive_service(application_name, credentials)
+          # Initialize the API
+          client = Google::Apis::DriveV3::DriveService.new
+          client.client_options.application_name = application_name
+          client.authorization = credentials
+          client
+        end
       end
     end
   end

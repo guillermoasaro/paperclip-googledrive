@@ -11,38 +11,39 @@ require 'paperclip/google_drive/session'
 require 'fileutils'
 
 module Paperclip
-
   module Storage
-      # * self.extended(base) add instance variable to attachment on call
-      # * url return url to show on site with style options
-      # * path(style) return title that used to insert file to store or find it in store
-      # * public_url_for title  return url to file if find by title or url to default image if set
-      # * search_for_title(title) take title, search in given folder and if it finds a file, return id of a file or nil
-      # * metadata_by_id(file_i get file metadata from store, used to back url or find out value of trashed
-      # * exists?(style)  check either exists file with title or not
-      # * default_image  return url to default url if set in option
-      # * find_public_folder return id of Public folder, must be in options
-      # return id of Public folder, must be in options
-      # * file_title return base pattern of title or custom one set by user
-      # * original_extension  return extension of file
-
+    # * self.extended(base) add instance variable to attachment on call
+    # * url return url to show on site with style options
+    # * path(style) return title that used to insert file to store or find it in store
+    # * public_url_for title  return url to file if find by title or url to default image if set
+    # * search_for_title(title) take title, search in given folder and if it finds a file, return id of a file or nil
+    # * metadata_by_id(file_i get file metadata from store, used to back url or find out value of trashed
+    # * exists?(style)  check either exists file with title or not
+    # * default_image  return url to default url if set in option
+    # * find_public_folder return id of Public folder, must be in options
+    # return id of Public folder, must be in options
+    # * file_title return base pattern of title or custom one set by user
+    # * original_extension  return extension of file
     module GoogleDrive
-      def self.extended(base)
-        begin
-          require 'google-api-client'
-        rescue LoadError => e
-          e.message << "(You may need to install the google-api-client gem)"
-          raise e
-        end unless defined?(Google)
+      class << self
+        def extended(base)
+          check_gem_is_installed
+          base.instance_eval do
+            @google_drive_client_secret_path = @options[:google_drive_client_secret_path]
+            @google_drive_options = @options[:google_drive_options] || { application_name: 'test-app' }
+            raise(ArgumentError, 'You must provide a valid google_drive_client_secret_path option') unless @google_drive_client_secret_path
+            raise(ArgumentError, 'You must set the public_folder_id option') unless @google_drive_options[:public_folder_id]
+            google_api_client # Force validations of credentials
+          end
+        end
 
-        base.instance_eval do
-          @google_drive_client_secret_path = @options[:google_drive_client_secret_path]
-          @google_drive_options = @options[:google_drive_options] || { application_name: 'test-app' }
-
-          fail(ArgumentError, 'You must provide a valid google_drive_client_secret_path option') unless @google_drive_client_secret_path
-          fail(ArgumentError, 'You must set the public_folder_id option') unless @google_drive_options[:public_folder_id]
-
-          google_api_client # Force validations of credentials
+        def check_gem_is_installed
+          begin
+            require 'google-api-client'
+          rescue LoadError => e
+            e.message << '(You may need to install the google-api-client gem)'
+            raise e
+          end unless defined?(Google)
         end
       end
 
@@ -60,7 +61,7 @@ module Paperclip
             parents: [find_public_folder]
           }
 
-          result = google_api_client.create_file(
+          google_api_client.create_file(
             file_metadata,
             fields: 'id',
             upload_source: file.binmode,
@@ -94,10 +95,14 @@ module Paperclip
 
       alias_method :google_drive, :google_api_client
 
+      # @params args [ Array ]
+      # @return [ String ]
       def url(*args)
         if present?
           style = args.first.is_a?(Symbol) ? args.first : default_style
-          options = args.last.is_a?(Hash) ? args.last : {}
+          # NOTE: this could be used to scale image as Google does. e.i. `<url>=s220`,
+          # where 220 is the weidth in pixeles.
+          # options = args.last.is_a?(Hash) ? args.last : {}
           public_url_for(path(style))
         else
           default_image
@@ -108,6 +113,9 @@ module Paperclip
         name_for_file(style)
       end
 
+      # Gets full title/name
+      # @param style [ String ]
+      # @return [ String ]
       def name_for_file(style)
         file_name = instance.instance_exec(style, &file_title)
         style_suffix = (style != default_style ? "_#{style}" : "")
@@ -116,7 +124,7 @@ module Paperclip
         else
           file_name + style_suffix + original_extension.to_s
         end
-      end # full title
+      end
 
       # Gets the public url for a passed filename
       # @param title [ String ]
@@ -149,7 +157,7 @@ module Paperclip
                 q: "name contains '#{ name }' and '#{ find_public_folder }' in parents",
                 fields: 'files(id, name)'
                 )
-        if result.files.length > 0 # TODO: change these coditionals
+        if result.files.length > 0
           result.files[0].id
         else
           nil
