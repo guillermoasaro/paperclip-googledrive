@@ -65,9 +65,14 @@ module Paperclip
           else
             raise(ArgumentError, 'You must set a valid config_path path')
           end
-
           config.scope ||= DEFAULT_SCOPE
+          config_from_options(config, options)
+        end
 
+        # @param options [ Hash ]
+        # @param  config [ Paperclip::GoogleDrive::Config ]
+        # @return [ Paperclip::GoogleDrive::Config ]
+        def config_from_options(config, options)
           if options[:client_id] && options[:client_secret]
             config.client_id = options[:client_id]
             config.client_secret = options[:client_secret]
