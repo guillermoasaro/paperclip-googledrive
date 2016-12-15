@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.googleapis.com/oauth2/v3/token
     body:
       encoding: ASCII-8BIT
-      string: grant_type=refresh_token&refresh_token=1%2F_sVZIgY5thPetbWDKZj3QpAdmJrmxDID5Rkvq6UEniL1YshaDnq5dIKoUAKgjE9f&client_id=932398239496-38rbghfh4i4jbckorqfq0m7o4rbfotjt.apps.googleusercontent.com&client_secret=1yYjNh1pR_Xps8tqdYM2LcuL
+      string: grant_type=refresh_token&refresh_token=1%2FLWQmTBk9jdsKjpset1RTjbAcTvpLIXtjB_ytZU9U2UGOI4x0cPPrtm7n1LpHxMU7&client_id=932398239496-4kjrr1aqqnrqj12b2idibtdt5nini9k8.apps.googleusercontent.com&client_secret=sDiJdDZleFXQnJGUmetJlv-I
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -27,7 +27,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Wed, 14 Dec 2016 23:47:36 GMT
+      - Thu, 15 Dec 2016 04:14:29 GMT
       Vary:
       - Origin
       - X-Origin
@@ -49,40 +49,40 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-         "access_token": "ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w",
+         "access_token": "ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ",
          "token_type": "Bearer",
          "expires_in": 3600
         }
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:36 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:29 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image_original_1_image.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyb3NMQUhyWUNsZFE%27%20in%20parents
+    uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image_original_1_image.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:37 GMT
+      - Thu, 15 Dec 2016 04:14:30 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Wed, 14 Dec 2016 23:47:37 GMT
+      - Thu, 15 Dec 2016 04:14:30 GMT
       Date:
-      - Wed, 14 Dec 2016 23:47:37 GMT
+      - Thu, 15 Dec 2016 04:14:30 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -111,26 +111,26 @@ http_interactions:
          "files": []
         }
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:37 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:30 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/upload/drive/v3/files?fields=id
     body:
       encoding: UTF-8
-      string: '{"description":"paperclip file on google drive","name":"original_1_image.png","parents":["0B-GFJI5FWVGyb3NMQUhyWUNsZFE"]}'
+      string: '{"description":"paperclip file on google drive","name":"original_1_image.png","parents":["0B-GFJI5FWVGyQXFKRzkydldoalk"]}'
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:37 GMT
+      - Thu, 15 Dec 2016 04:14:30 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
       Content-Type:
       - application/json
       X-Goog-Upload-Protocol:
@@ -149,22 +149,22 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UqOxDFGgRPsYNHXJmDKK_pT2PxHo3m3TmCy6SxOgCRpRLzvvYuZP371yM3U8TwpKkb-IO6URO11ZOTxMELPHSFRy47skw
+      - AEnB2Uq_R5mQ33oKd2Em2mzZX0GSbSfPODbKT-TP7lWUSUkezlmw3l5VNKbfHanW9hDwNNAiYBqWSE6iZxqHa8E9yD0rtnjJjfyHOY8ea_XzNXocYvxE-lY
       X-Goog-Upload-Status:
       - active
       X-Goog-Upload-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UqOxDFGgRPsYNHXJmDKK_pT2PxHo3m3TmCy6SxOgCRpRLzvvYuZP371yM3U8TwpKkb-IO6URO11ZOTxMELPHSFRy47skw&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uq_R5mQ33oKd2Em2mzZX0GSbSfPODbKT-TP7lWUSUkezlmw3l5VNKbfHanW9hDwNNAiYBqWSE6iZxqHa8E9yD0rtnjJjfyHOY8ea_XzNXocYvxE-lY&upload_protocol=resumable
       X-Goog-Upload-Control-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UqOxDFGgRPsYNHXJmDKK_pT2PxHo3m3TmCy6SxOgCRpRLzvvYuZP371yM3U8TwpKkb-IO6URO11ZOTxMELPHSFRy47skw&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uq_R5mQ33oKd2Em2mzZX0GSbSfPODbKT-TP7lWUSUkezlmw3l5VNKbfHanW9hDwNNAiYBqWSE6iZxqHa8E9yD0rtnjJjfyHOY8ea_XzNXocYvxE-lY&upload_protocol=resumable
       X-Goog-Upload-Chunk-Granularity:
       - '262144'
       X-Goog-Upload-Header-Vary:
       - Origin
       - X-Origin
       X-Goog-Upload-Header-X-Google-Backends:
-      - vkaz127:4770
+      - vkde199:4843
       X-Goog-Upload-Header-X-Google-Session-Info:
-      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTM4cmJnaGZoNGk0amJja29ycWZxMG03bzRyYmZvdGp0LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSlsSSHlhMjkuQ2pDMEE5T2F4cWpQNzdiYkplb2h6VUhLaW5McUNKbkFBZW9pRnZXaV9MRm5FUjhGZXFFUTU4bnhqemJaRjJRRmY5dzAEOg0xL19zVlpJZ1k1dGh-
+      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTRranJyMWFxcW5ycWoxMmIyaWRpYnRkdDVuaW5pOWs4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSloSR3lhMjkuQ2ktMUE1ODhoR2VNbUpEei1wVVIybl9YTk1LVzYzb3d1ck9ieHNPa1NVWHVUMEhfNEhNZ3MtSjF3NFBqUkNaVFlRMAQ6DTEvTFdRbVRCazlqZH4
       X-Goog-Upload-Header-Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       X-Goog-Upload-Header-Pragma:
@@ -172,11 +172,11 @@ http_interactions:
       X-Goog-Upload-Header-Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       X-Goog-Upload-Header-Date:
-      - Wed, 14 Dec 2016 23:47:37 GMT
+      - Thu, 15 Dec 2016 04:14:30 GMT
       Content-Length:
       - '0'
       Date:
-      - Wed, 14 Dec 2016 23:47:37 GMT
+      - Thu, 15 Dec 2016 04:14:30 GMT
       Server:
       - UploadServer
       Content-Type:
@@ -187,10 +187,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:37 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:30 GMT
 - request:
     method: post
-    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UqOxDFGgRPsYNHXJmDKK_pT2PxHo3m3TmCy6SxOgCRpRLzvvYuZP371yM3U8TwpKkb-IO6URO11ZOTxMELPHSFRy47skw&upload_protocol=resumable
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uq_R5mQ33oKd2Em2mzZX0GSbSfPODbKT-TP7lWUSUkezlmw3l5VNKbfHanW9hDwNNAiYBqWSE6iZxqHa8E9yD0rtnjJjfyHOY8ea_XzNXocYvxE-lY&upload_protocol=resumable
     body:
       encoding: UTF-8
       string: !binary |-
@@ -307,16 +307,16 @@ http_interactions:
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:37 GMT
+      - Thu, 15 Dec 2016 04:14:30 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
       Content-Type:
       - application/json
       X-Goog-Upload-Command:
@@ -331,7 +331,7 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UqOxDFGgRPsYNHXJmDKK_pT2PxHo3m3TmCy6SxOgCRpRLzvvYuZP371yM3U8TwpKkb-IO6URO11ZOTxMELPHSFRy47skw
+      - AEnB2Uq_R5mQ33oKd2Em2mzZX0GSbSfPODbKT-TP7lWUSUkezlmw3l5VNKbfHanW9hDwNNAiYBqWSE6iZxqHa8E9yD0rtnjJjfyHOY8ea_XzNXocYvxE-lY
       X-Goog-Upload-Status:
       - final
       Vary:
@@ -346,7 +346,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:31 GMT
       Content-Length:
       - '42'
       Server:
@@ -357,38 +357,38 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGybU9GdE1nOEZEOTA"
+         "id": "0B-GFJI5FWVGyMkZHT2I0T296WWs"
         }
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:39 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:31 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27medium_1_image_medium_medium_1_image_medium.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyb3NMQUhyWUNsZFE%27%20in%20parents
+    uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27medium_1_image_medium_medium_1_image_medium.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:31 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:32 GMT
       Date:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:32 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -417,26 +417,26 @@ http_interactions:
          "files": []
         }
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:39 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:33 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/upload/drive/v3/files?fields=id
     body:
       encoding: UTF-8
-      string: '{"description":"paperclip file on google drive","name":"medium_1_image_medium.png","parents":["0B-GFJI5FWVGyb3NMQUhyWUNsZFE"]}'
+      string: '{"description":"paperclip file on google drive","name":"medium_1_image_medium.png","parents":["0B-GFJI5FWVGyQXFKRzkydldoalk"]}'
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:33 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
       Content-Type:
       - application/json
       X-Goog-Upload-Protocol:
@@ -455,22 +455,22 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2Uo8vuH3cjlv3yvWv2Ad4T-rbDLENrIfAzZne2HAwX-25GYMewihvlPTlgGTxtar_AcLv8dLW8Aydj2fmAKJtvNTLhmzpA
+      - AEnB2Ur5pCztmQdNVJja_6rPvNeCqAr9CiZ3vG5fKwilWTo0dCqyRzOQszhlkjIZY0riwiWW_yZdMqvtOPwPMwUsAjxVIZMh3sItV3YqhT04m5qggrQ2P0E
       X-Goog-Upload-Status:
       - active
       X-Goog-Upload-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uo8vuH3cjlv3yvWv2Ad4T-rbDLENrIfAzZne2HAwX-25GYMewihvlPTlgGTxtar_AcLv8dLW8Aydj2fmAKJtvNTLhmzpA&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Ur5pCztmQdNVJja_6rPvNeCqAr9CiZ3vG5fKwilWTo0dCqyRzOQszhlkjIZY0riwiWW_yZdMqvtOPwPMwUsAjxVIZMh3sItV3YqhT04m5qggrQ2P0E&upload_protocol=resumable
       X-Goog-Upload-Control-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uo8vuH3cjlv3yvWv2Ad4T-rbDLENrIfAzZne2HAwX-25GYMewihvlPTlgGTxtar_AcLv8dLW8Aydj2fmAKJtvNTLhmzpA&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Ur5pCztmQdNVJja_6rPvNeCqAr9CiZ3vG5fKwilWTo0dCqyRzOQszhlkjIZY0riwiWW_yZdMqvtOPwPMwUsAjxVIZMh3sItV3YqhT04m5qggrQ2P0E&upload_protocol=resumable
       X-Goog-Upload-Chunk-Granularity:
       - '262144'
       X-Goog-Upload-Header-Vary:
       - Origin
       - X-Origin
       X-Goog-Upload-Header-X-Google-Backends:
-      - vkdo193:4644
+      - vkxx80:4873
       X-Goog-Upload-Header-X-Google-Session-Info:
-      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTM4cmJnaGZoNGk0amJja29ycWZxMG03bzRyYmZvdGp0LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSlsSSHlhMjkuQ2pDMEE5T2F4cWpQNzdiYkplb2h6VUhLaW5McUNKbkFBZW9pRnZXaV9MRm5FUjhGZXFFUTU4bnhqemJaRjJRRmY5dzAEOg0xL19zVlpJZ1k1dGh-
+      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTRranJyMWFxcW5ycWoxMmIyaWRpYnRkdDVuaW5pOWs4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSloSR3lhMjkuQ2ktMUE1ODhoR2VNbUpEei1wVVIybl9YTk1LVzYzb3d1ck9ieHNPa1NVWHVUMEhfNEhNZ3MtSjF3NFBqUkNaVFlRMAQ6DTEvTFdRbVRCazlqZH4
       X-Goog-Upload-Header-Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       X-Goog-Upload-Header-Pragma:
@@ -478,11 +478,11 @@ http_interactions:
       X-Goog-Upload-Header-Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       X-Goog-Upload-Header-Date:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:33 GMT
       Content-Length:
       - '0'
       Date:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:33 GMT
       Server:
       - UploadServer
       Content-Type:
@@ -493,17 +493,17 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:39 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:33 GMT
 - request:
     method: post
-    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uo8vuH3cjlv3yvWv2Ad4T-rbDLENrIfAzZne2HAwX-25GYMewihvlPTlgGTxtar_AcLv8dLW8Aydj2fmAKJtvNTLhmzpA&upload_protocol=resumable
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Ur5pCztmQdNVJja_6rPvNeCqAr9CiZ3vG5fKwilWTo0dCqyRzOQszhlkjIZY0riwiWW_yZdMqvtOPwPMwUsAjxVIZMh3sItV3YqhT04m5qggrQ2P0E&upload_protocol=resumable
     body:
       encoding: UTF-8
       string: !binary |-
         iVBORw0KGgoAAAANSUhEUgAAASYAAAEsCAYAAABuXx68AAAABGdBTUEAALGP
         C/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3Cc
         ulE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA
-        B3RJTUUH4AwOEi8kzgKAsgAAgABJREFUeNrt/eti28gONYguoIqU7CR7f/O+
+        B3RJTUUH4AwPBA4dvY+l/gAAgABJREFUeNrt/eti28gONYguoIqU7CR7f/O+
         5yXOvM481uy2RbIKmB9A3SjZcRI7vjTRzVCSdaFEcnFh4Ub/v/////3/ACAA
         DCAAiAAmALMv0R8nNFMc9vmM+l1IdUX1Nu1fMO71XzGt//h9bQ9Dx7/vn3vY
         V7M9dmQACcDqy+b3MwABoNFf9NLlsM9sqmiA1EBB4Y9rBw5lb9/Ai1+6Qime
@@ -1255,22 +1255,22 @@ http_interactions:
         xbkBZsNBX5Mrr4Eq+BU9FrAKhMm327Y5XF0BW6nKV7Rbwm/3J7XUJEi2/ez7
         NzL7MeS/bfdbD7EDGuXu32EWOpTOt2v7cDGqF6FQL77RwXOKwZlzqIxJ2bSz
         dmx3nyeKzABny3u3/l6MHJyJd8dT1Ter6zvEN9/SOkyhmlBZFvKQ4v8HLd+C
-        6fag7tAAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMTItMTRUMTg6NDc6MzYt
-        MDU6MDDTHcQqAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTEyLTE0VDE4OjQ3
-        OjM2LTA1OjAwokB8lgAAAABJRU5ErkJggg==
+        6fag7tAAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMTItMTRUMjM6MTQ6Mjkt
+        MDU6MDDoNzlkAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTEyLTE0VDIzOjE0
+        OjI5LTA1OjAwmWqB2AAAAABJRU5ErkJggg==
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:39 GMT
+      - Thu, 15 Dec 2016 04:14:33 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
       Content-Type:
       - application/json
       X-Goog-Upload-Command:
@@ -1285,7 +1285,7 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2Uo8vuH3cjlv3yvWv2Ad4T-rbDLENrIfAzZne2HAwX-25GYMewihvlPTlgGTxtar_AcLv8dLW8Aydj2fmAKJtvNTLhmzpA
+      - AEnB2Ur5pCztmQdNVJja_6rPvNeCqAr9CiZ3vG5fKwilWTo0dCqyRzOQszhlkjIZY0riwiWW_yZdMqvtOPwPMwUsAjxVIZMh3sItV3YqhT04m5qggrQ2P0E
       X-Goog-Upload-Status:
       - final
       Vary:
@@ -1300,7 +1300,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Wed, 14 Dec 2016 23:47:40 GMT
+      - Thu, 15 Dec 2016 04:14:34 GMT
       Content-Length:
       - '42'
       Server:
@@ -1311,38 +1311,38 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGybGFoMUJueC1QMXM"
+         "id": "0B-GFJI5FWVGyYldweXl5Y2RlTm8"
         }
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:40 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:34 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image.png%27%20and%20%270B-GFJI5FWVGyb3NMQUhyWUNsZFE%27%20in%20parents
+    uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:40 GMT
+      - Thu, 15 Dec 2016 04:14:34 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Wed, 14 Dec 2016 23:47:40 GMT
+      - Thu, 15 Dec 2016 04:14:34 GMT
       Date:
-      - Wed, 14 Dec 2016 23:47:40 GMT
+      - Thu, 15 Dec 2016 04:14:34 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1370,41 +1370,41 @@ http_interactions:
         {
          "files": [
           {
-           "id": "0B-GFJI5FWVGybU9GdE1nOEZEOTA",
+           "id": "0B-GFJI5FWVGyMkZHT2I0T296WWs",
            "name": "original_1_image.png"
           }
          ]
         }
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:41 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:34 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGybU9GdE1nOEZEOTA?fields=id,%20name,%20thumbnailLink
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyMkZHT2I0T296WWs?fields=id,%20name,%20thumbnailLink
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Mac OS X/10.11.5
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 14 Dec 2016 23:47:41 GMT
+      - Thu, 15 Dec 2016 04:14:34 GMT
       Authorization:
-      - Bearer ya29.CjC0A9OaxqjP77bbJeohzUHKinLqCJnAAeoiFvWi_LFnER8FeqEQ58nxjzbZF2QFf9w
+      - Bearer ya29.Ci-1A588hGeMmJDz-pUR2n_XNMKW63owurObxsOkSUXuT0H_4HMgs-J1w4PjRCZTYQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Wed, 14 Dec 2016 23:47:40 GMT
+      - Thu, 15 Dec 2016 04:14:34 GMT
       Date:
-      - Wed, 14 Dec 2016 23:47:40 GMT
+      - Thu, 15 Dec 2016 04:14:34 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1430,10 +1430,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGybU9GdE1nOEZEOTA",
+         "id": "0B-GFJI5FWVGyMkZHT2I0T296WWs",
          "name": "original_1_image.png",
-         "thumbnailLink": "https://lh4.googleusercontent.com/eL2Ho0B8D317KknN32rQAyLSbuWhgK8PA1z8lxRnXgA37DRnRY-jwlIvMbzyPgHan3fH_Q=s220"
+         "thumbnailLink": "https://lh6.googleusercontent.com/XiZJ_TBFXY1_-8qp2yfBEEXPiQRxGHAIYlxkIFdeyLvO-ODea1RvB4DompysWDFvafgg8g=s220"
         }
     http_version: 
-  recorded_at: Wed, 14 Dec 2016 23:47:41 GMT
+  recorded_at: Thu, 15 Dec 2016 04:14:34 GMT
 recorded_with: VCR 3.0.3

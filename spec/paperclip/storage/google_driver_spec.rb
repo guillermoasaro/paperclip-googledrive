@@ -7,7 +7,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
       :styles => { :medium => "300x300" },
       :google_drive_options => {
         :application_name => 'test-app',
-        :public_folder_id => '0B-GFJI5FWVGyb3NMQUhyWUNsZFE',
+        :public_folder_id => '0B-GFJI5FWVGyQXFKRzkydldoalk',
         :path => proc { |style| "#{style}_#{id}_#{avatar.original_filename}" }
       }
     @dummy = Dummy.new
