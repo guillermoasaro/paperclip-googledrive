@@ -38,6 +38,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
       end
     end
   end
+
   context 'Errors' do
     it 'raise an error when the file already exist' do
       VCR.use_cassette('image_already_exists') do
@@ -57,7 +58,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
       end
     end
 
-    it 'raise an error when it is not passed a google_drive_client_secret_path option' do
+    it 'raise an error when is not passed the google_drive_client_secret_path option' do
        rebuild_model(
         storage: :google_drive,
         google_drive_client_secret_path: nil
@@ -65,7 +66,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
       expect{ Dummy.new.save }.to raise_error(ArgumentError, 'You must provide a valid google_drive_client_secret_path option')
     end
 
-    it 'raise an error when it is not passed a ivalid google_drive_client_secret_path option' do
+    it 'raise an error when is passed a invalid google_drive_client_secret_path option' do
        rebuild_model(
         storage: :google_drive,
         google_drive_client_secret_path: 'path/to/nowhere.json',
@@ -77,7 +78,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
       expect{ Dummy.new.save }.to raise_error(ArgumentError, 'Missing required client identifier.')
     end
 
-    it 'raise an error when there is not passed a application_name option' do
+    it 'raise an error when is not passed the application_name option' do
       rebuild_model(
         storage: :google_drive,
         google_drive_client_secret_path: 'spec/support/client_secret.json',
@@ -89,7 +90,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
       expect{ Dummy.new.save }.to raise_error(ArgumentError, 'You must specify the application_name option')
     end
 
-    it 'raise an error when there is not passed a public_folder_id option' do
+    it 'raise an error when there is not passed the public_folder_id option' do
       rebuild_model(
         storage: :google_drive,
         google_drive_client_secret_path: 'spec/support/client_secret.json',
