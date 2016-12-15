@@ -38,7 +38,10 @@ module Paperclip
         base.instance_eval do
           @google_drive_client_secret_path = @options[:google_drive_client_secret_path]
           @google_drive_options = @options[:google_drive_options] || { application_name: 'test-app' }
-          fail(ArgumentError, 'You must to provide a valid google_drive_client_secret_path option') unless @google_drive_client_secret_path
+
+          fail(ArgumentError, 'You must provide a valid google_drive_client_secret_path option') unless @google_drive_client_secret_path
+          fail(ArgumentError, 'You must set the public_folder_id option') unless @google_drive_options[:public_folder_id]
+
           google_api_client # Force validations of credentials
         end
       end
@@ -192,7 +195,6 @@ module Paperclip
       end
 
       def find_public_folder
-        raise KeyError, "You must set the public_folder_id option" unless @google_drive_options[:public_folder_id]
         if @google_drive_options[:public_folder_id].is_a? Proc
           instance.instance_exec(&@google_drive_options[:public_folder_id])
         else

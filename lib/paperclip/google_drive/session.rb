@@ -33,7 +33,7 @@ module Paperclip
       #   scope=
       #   save
       def self.from_config(config, options = {})
-        fail(ArgumentError, 'You must to specified the application_name option') unless options[:application_name]
+        fail(ArgumentError, 'You must specify the application_name option') unless options[:application_name]
 
         if config.is_a?(String)
           config = Paperclip::GoogleDrive::Config.new(config)
@@ -54,7 +54,6 @@ module Paperclip
           client_secret: config.client_secret,
           scope: config.scope,
           redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
-
         if config.refresh_token
           credentials.refresh_token = config.refresh_token
           credentials.fetch_access_token!
