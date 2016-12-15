@@ -75,9 +75,9 @@ module Paperclip
       #
       def flush_deletes
         @queued_for_delete.each do |path|
-          Paperclip.log("Delete: #{path}")
+          Paperclip.log("Delete: #{ path }")
           file_id = search_for_title(path)
-          result = google_api_client.delete_file(file_id) unless file_id.nil?
+          google_api_client.delete_file(file_id) unless file_id.nil?
         end
         @queued_for_delete = []
       end
