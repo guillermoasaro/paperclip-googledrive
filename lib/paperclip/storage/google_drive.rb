@@ -47,12 +47,12 @@ module Paperclip
         end
       end
 
-      #
+      # Main process to upload a file
       def flush_writes
         @queued_for_write.each do |style, file|
           raise FileExists, "file \"#{path(style)}\" already exists in your Google Drive" if exists?(path(style))
 
-          name, mime_type = name_for_file(style), "#{ file.content_type }"
+          name, mime_type = name_for_file_from(style), "#{ file.content_type }"
 
           file_metadata = {
             name: name,
@@ -72,7 +72,7 @@ module Paperclip
         @queued_for_write = {}
       end
 
-      #
+      # Process to destroy a file
       def flush_deletes
         @queued_for_delete.each do |path|
           Paperclip.log("Delete: #{ path }")
@@ -95,28 +95,37 @@ module Paperclip
 
       alias_method :google_drive, :google_api_client
 
+      # This could be used to scale image as Google does. e.i. `<url>=s220`,
+      # where 220 is the width in pixeles OR as Paperclip does.
       # @params args [ Array ]
       # @return [ String ]
+      #  ex.
+      #     1. If you want the medium version of your image (Paperclip way)
+      #       some_model.avatar.url(:medium)
+      #     2. If you want a custom version of your image/pdf (Google way)
+      #       some_model.avatar.url(:custom, width: 500)
       def url(*args)
         if present?
           style = args.first.is_a?(Symbol) ? args.first : default_style
-          # NOTE: this could be used to scale image as Google does. e.i. `<url>=s220`,
-          # where 220 is the weidth in pixeles.
-          # options = args.last.is_a?(Hash) ? args.last : {}
-          public_url_for(path(style))
+          options = args.last.is_a?(Hash) ? args.last : {}
+          if style == :custom
+            custom_width = options[:width] || 220
+            file_name = name_for_file_from(default_style)
+          else
+            custom_width = nil
+            file_name = name_for_file_from(style)
+          end
+
+          public_url_for(file_name, custom_width)
         else
           default_image
         end
       end
 
-      def path(style)
-        name_for_file(style)
-      end
-
       # Gets full title/name
       # @param style [ String ]
       # @return [ String ]
-      def name_for_file(style)
+      def name_for_file_from(style)
         file_name = instance.instance_exec(style, &file_title)
         style_suffix = (style != default_style ? "_#{style}" : "")
         if original_extension.present? && file_name =~ /#{original_extension}$/
@@ -126,24 +135,35 @@ module Paperclip
         end
       end
 
+      alias_method :path, :name_for_file_from
+
       # Gets the public url for a passed filename
       # @param title [ String ]
+      # @param custom_width [ Integer ]
       # @return [ String ] with url
-      def public_url_for(title)
+      def public_url_for(title, custom_width)
         searched_id = search_for_title(title) #return id if any or style
         if searched_id.nil? # it finds some file
           default_image
         else
           metadata = metadata_by_id(searched_id)
-          full_image_for(metadata.thumbnail_link) #web_content_link #or metadata.web_view_link?
+          custom_image_for(metadata.thumbnail_link, custom_width)
         end
       end
 
-      # Removes the last parameter `=s220` which is inchaged to scale the retrieved image
+      # Retrieves the specific image with a custom size. It is resized by GDrive API if you
+      # pass the :custom as style option. In other cases it removes the last parameter `=s220`
+      # which is inchaged to do the scaling process.
       # @param drive_thumbnail_link [ String ]
+      # @param custom_width [ Integer ]
       # @return [ String ]
-      def full_image_for(drive_thumbnail_link)
-        drive_thumbnail_link.split(/=s/)[0]
+      def custom_image_for(drive_thumbnail_link, custom_width=nil)
+        file_url, current_width = drive_thumbnail_link.split(/=s/)
+        new_file_url = if custom_width.nil?
+                        file_url
+                      else
+                        "#{ file_url }=s#{ custom_width }"
+                      end
       end
 
       # Takes the file title/name and search it in a given folder
@@ -164,17 +184,28 @@ module Paperclip
         end
       end
 
+      # Gets a file from GDrive
       # @parent file_id [ String ]
       # @return [ Google::Apis::DriveV3::File ]
       def metadata_by_id(file_id)
         if file_id.is_a? String
           client = google_api_client
-          result = client.get_file(
+          metadata = client.get_file(
                     file_id,
                     fields: 'id, name, thumbnailLink'
                     )
-          result
+          validate_metadata(metadata)
+          metadata
         end
+      end
+
+      # Raises an error in case that the Google Drive API does not response
+      # with the minimum required information.
+      # @params [ Google::Apis::DriveV3::File ]
+      def validate_metadata(metadata)
+        raise 'the file id was not retrieved' if metadata.id.nil?
+        raise 'the file name was not retrieved' if metadata.name.nil?
+        raise 'the file thumbnail_link was not retrieved' if metadata.thumbnail_link.nil?
       end
 
       # Checks if the image already exits
@@ -196,7 +227,7 @@ module Paperclip
           title = @google_drive_options[:default_url]
           searched_id = search_for_title(title) # id
           metadata = metadata_by_id(searched_id) unless searched_id.nil?
-          full_image_for(metadata.thumbnail_link) #web_view_link #web_content_link
+          custom_image_for(metadata.thumbnail_link)
         else
           'No picture' # ---- ?
         end
