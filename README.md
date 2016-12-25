@@ -2,7 +2,7 @@
 [![GitHub version](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive.svg)](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive)
 [![Code Climate](https://codeclimate.com/github/degzcs/paperclip-googledrive/badges/gpa.svg)](https://codeclimate.com/github/degzcs/paperclip-googledrive)
 
-PaperclipGoogledrive is a gem that extends paperclip storage for Google Drive (V3). Works with Rails 3.x. and later. 
+PaperclipGoogledrive is a gem that extends paperclip storage for Google Drive (V3). Works with Rails 3.x. and later.
 IMPORTANT NOTE: This repo was forked and upgraded to use Google Drive V3.
 
 ## Installation
@@ -35,7 +35,7 @@ Google Drive is a free service for file storage files. In order to use this stor
     ```sh
     $ rake google_drive:authorize"[path/to/client_secret.json, 'application_name']"
     ```
-    NOTE: 
+    NOTE:
      - the `path/to/client_secret.json` path is the file downloaded from Google console (it will be overrided with the fresh token).
      - the `application_name` param is the name that you set for the application credentials on Google console.
 
@@ -86,7 +86,7 @@ class Product < ActiveRecord::Base
     :google_drive_client_secret_path => "#{Rails.root}/config/client_secret.json"
     :styles => { :medium => "300x300" },
     :google_drive_options => {
-      :path => proc { |style| "#{style}_#{id}_#{photo.original_filename}" },
+      :path => proc { |style| "#{id}_#{photo.original_filename}_#{style}" },
       :public_folder_id => 'AAAARRRRGGGBBBFFFFadsasdX'
     }
 end
@@ -95,6 +95,12 @@ For example, a new product is created with the ID of 14, and a some_photo.jpg as
 
 Public/14_some_photo.jpg
 Public/14_some_photo_medium.jpg
+
+Also, you can use the resize feature provided by GDrive API, you only have to pass as parameter in the url params the option `:custom` and `width`, as follows:
+
+```ruby
+  some_product.photo.url(:custom, width: 500)
+```
 
 The another file is called some_photo_medium.jpg because style names (other than original) will always be appended to the filenames, for better management.
 
