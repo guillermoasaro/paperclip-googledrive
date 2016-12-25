@@ -35,27 +35,27 @@ module ModelReconstruction
     ActiveRecord::Base.connection.create_table :dummies, force: true do |table|
       table.column :title, :string
       table.column :other, :string
-      table.column :avatar_file_name, :string
-      table.column :avatar_content_type, :string
-      table.column :avatar_file_size, :integer
-      table.column :avatar_updated_at, :datetime
-      table.column :avatar_fingerprint, :string
+      table.column :document_file_name, :string
+      table.column :document_content_type, :string
+      table.column :document_file_size, :integer
+      table.column :document_updated_at, :datetime
+      table.column :document_fingerprint, :string
     end
     rebuild_class options
   end
 
   def rebuild_class options = {}
     reset_class("Dummy").tap do |klass|
-      klass.has_attached_file :avatar, options
-      klass.do_not_validate_attachment_file_type :avatar
+      klass.has_attached_file :document, options
+      klass.do_not_validate_attachment_file_type :document
       Paperclip.reset_duplicate_clash_check!
     end
   end
 
   def rebuild_meta_class_of obj, options = {}
     meta_class_of(obj).tap do |metaklass|
-      metaklass.has_attached_file :avatar, options
-      metaklass.do_not_validate_attachment_file_type :avatar
+      metaklass.has_attached_file :document, options
+      metaklass.do_not_validate_attachment_file_type :document
       Paperclip.reset_duplicate_clash_check!
     end
   end
