@@ -27,7 +27,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Thu, 15 Dec 2016 05:26:31 GMT
+      - Mon, 26 Dec 2016 01:56:41 GMT
       Vary:
       - Origin
       - X-Origin
@@ -49,12 +49,12 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-         "access_token": "ya29.Ci-1A5nte6BVoOVmNYKeVTIG2WRqJzO7xZhK1rmcADxwwHivSVsJTNAVA8ekPnU12Q",
+         "access_token": "ya29.CjDAAxh-LlgH7QG6IgkfBwLuXKe_n93N_Vi5fwzgcUyhcEw83NyGvwbyKTTTGNvUA9M",
          "token_type": "Bearer",
          "expires_in": 3600
         }
     http_version: 
-  recorded_at: Thu, 15 Dec 2016 05:26:31 GMT
+  recorded_at: Mon, 26 Dec 2016 01:56:41 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image_original_1_image.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
@@ -64,25 +64,25 @@ http_interactions:
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-57-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 15 Dec 2016 05:26:31 GMT
+      - Mon, 26 Dec 2016 01:56:41 GMT
       Authorization:
-      - Bearer ya29.Ci-1A5nte6BVoOVmNYKeVTIG2WRqJzO7xZhK1rmcADxwwHivSVsJTNAVA8ekPnU12Q
+      - Bearer ya29.CjDAAxh-LlgH7QG6IgkfBwLuXKe_n93N_Vi5fwzgcUyhcEw83NyGvwbyKTTTGNvUA9M
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Thu, 15 Dec 2016 05:26:31 GMT
+      - Mon, 26 Dec 2016 01:56:42 GMT
       Date:
-      - Thu, 15 Dec 2016 05:26:31 GMT
+      - Mon, 26 Dec 2016 01:56:42 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -110,41 +110,41 @@ http_interactions:
         {
          "files": [
           {
-           "id": "0B-GFJI5FWVGyVkNOX2FrRHVWZ1E",
+           "id": "0B-GFJI5FWVGyN0YwNmlIMWtOWU0",
            "name": "original_1_image.png"
           }
          ]
         }
     http_version: 
-  recorded_at: Thu, 15 Dec 2016 05:26:31 GMT
+  recorded_at: Mon, 26 Dec 2016 01:56:42 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyVkNOX2FrRHVWZ1E?fields=id,%20name,%20thumbnailLink
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyN0YwNmlIMWtOWU0?fields=id,%20name,%20thumbnailLink,%20webContentLink,%20webViewLink,%20trashed
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
       - |-
-        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-38-generic
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-57-generic
          (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 15 Dec 2016 05:26:31 GMT
+      - Mon, 26 Dec 2016 01:56:42 GMT
       Authorization:
-      - Bearer ya29.Ci-1A5nte6BVoOVmNYKeVTIG2WRqJzO7xZhK1rmcADxwwHivSVsJTNAVA8ekPnU12Q
+      - Bearer ya29.CjDAAxh-LlgH7QG6IgkfBwLuXKe_n93N_Vi5fwzgcUyhcEw83NyGvwbyKTTTGNvUA9M
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Thu, 15 Dec 2016 05:26:31 GMT
+      - Mon, 26 Dec 2016 01:56:47 GMT
       Date:
-      - Thu, 15 Dec 2016 05:26:31 GMT
+      - Mon, 26 Dec 2016 01:56:47 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -170,10 +170,13 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGyVkNOX2FrRHVWZ1E",
+         "id": "0B-GFJI5FWVGyN0YwNmlIMWtOWU0",
          "name": "original_1_image.png",
-         "thumbnailLink": "https://lh6.googleusercontent.com/_bJLfrEKc0JnCoBpfQmVqvoAwDU2d3klB64y_Ygqelb82uZjZY6mnC4XmZwi_IA54q7H0Q=s220"
+         "trashed": false,
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyN0YwNmlIMWtOWU0&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyN0YwNmlIMWtOWU0/view?usp=drivesdk",
+         "thumbnailLink": "https://lh5.googleusercontent.com/RGQDHw80Bs-4vH7Z3wrZF1wALihcIJUsfbObfPpiB1rltCPIeuj_mDImEaimQ8H1Dw0FxQ=s220"
         }
     http_version: 
-  recorded_at: Thu, 15 Dec 2016 05:26:31 GMT
+  recorded_at: Mon, 26 Dec 2016 01:56:47 GMT
 recorded_with: VCR 3.0.3

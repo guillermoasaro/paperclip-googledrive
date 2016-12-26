@@ -27,7 +27,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:24 GMT
+      - Mon, 26 Dec 2016 01:54:33 GMT
       Vary:
       - Origin
       - X-Origin
@@ -49,12 +49,12 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-         "access_token": "ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs",
+         "access_token": "ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ",
          "token_type": "Bearer",
          "expires_in": 3600
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:24 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:33 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image_original_1_image.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
@@ -71,18 +71,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:24 GMT
+      - Mon, 26 Dec 2016 01:54:33 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:25 GMT
+      - Mon, 26 Dec 2016 01:54:34 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:25 GMT
+      - Mon, 26 Dec 2016 01:54:34 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -108,10 +108,77 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "files": []
+         "files": [
+          {
+           "id": "0B-GFJI5FWVGyUUlkWTRINENOaVE",
+           "name": "original_1_image.png"
+          }
+         ]
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:25 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:34 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyUUlkWTRINENOaVE?fields=id,%20name,%20thumbnailLink,%20webContentLink,%20webViewLink,%20trashed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-57-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Mon, 26 Dec 2016 01:54:34 GMT
+      Authorization:
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Mon, 26 Dec 2016 01:54:34 GMT
+      Date:
+      - Mon, 26 Dec 2016 01:54:34 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "id": "0B-GFJI5FWVGyUUlkWTRINENOaVE",
+         "name": "original_1_image.png",
+         "trashed": true,
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyUUlkWTRINENOaVE&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyUUlkWTRINENOaVE/view?usp=drivesdk",
+         "thumbnailLink": "https://lh3.googleusercontent.com/fILxadmUQxEJqWLhh1jaSUMIw9LgKF2ayyHGis-AOFlv0YJ5YhyXdRRFbUnXG9Wd5FUF8w=s220"
+        }
+    http_version: 
+  recorded_at: Mon, 26 Dec 2016 01:54:34 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/upload/drive/v3/files?fields=id
@@ -128,9 +195,9 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:25 GMT
+      - Mon, 26 Dec 2016 01:54:34 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
       Content-Type:
       - application/json
       X-Goog-Upload-Protocol:
@@ -149,22 +216,22 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UopAO2AHrXtrzeJgBB0BipfwEJk0hVA4PJPzzgm7C5fmilljxMzH9DXkYBAzBFe7IWa6K1scmP0Kv9vz5Hms_iHQZ30lQ
+      - AEnB2Uomi2y7Ribsa93FNLl7pChiF_jdZo2xABvw29AV_GH7ufk2c9mf1qnv_kQnKxsftpAzRWomAd7mq_Yxsx2JxRtZ0m9qyw
       X-Goog-Upload-Status:
       - active
       X-Goog-Upload-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UopAO2AHrXtrzeJgBB0BipfwEJk0hVA4PJPzzgm7C5fmilljxMzH9DXkYBAzBFe7IWa6K1scmP0Kv9vz5Hms_iHQZ30lQ&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uomi2y7Ribsa93FNLl7pChiF_jdZo2xABvw29AV_GH7ufk2c9mf1qnv_kQnKxsftpAzRWomAd7mq_Yxsx2JxRtZ0m9qyw&upload_protocol=resumable
       X-Goog-Upload-Control-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UopAO2AHrXtrzeJgBB0BipfwEJk0hVA4PJPzzgm7C5fmilljxMzH9DXkYBAzBFe7IWa6K1scmP0Kv9vz5Hms_iHQZ30lQ&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uomi2y7Ribsa93FNLl7pChiF_jdZo2xABvw29AV_GH7ufk2c9mf1qnv_kQnKxsftpAzRWomAd7mq_Yxsx2JxRtZ0m9qyw&upload_protocol=resumable
       X-Goog-Upload-Chunk-Granularity:
       - '262144'
       X-Goog-Upload-Header-Vary:
       - Origin
       - X-Origin
       X-Goog-Upload-Header-X-Google-Backends:
-      - vkhg67:4886
+      - vkyy144:4758
       X-Goog-Upload-Header-X-Google-Session-Info:
-      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTRranJyMWFxcW5ycWoxMmIyaWRpYnRkdDVuaW5pOWs4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSlsSSHlhMjkuQ2pDX0E3ejlNVFlwd01CUnl6VGNJUTVIWGNlS0dWR2pYcUNzcS1kU3Nzc01RcWxvejZFajFFamFQQ3VESVlzUldQczAEOg0xL0xXUW1UQms5amR-
+      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTRranJyMWFxcW5ycWoxMmIyaWRpYnRkdDVuaW5pOWs4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSlsSSHlhMjkuQ2pEQUFfRVFnRTF6NjhwN3h3R195WlV4N2wyTTN0TVhud0JJVnVhS2h2N3pLTnRpMjNEZWJ5anRWTU5PRS0zdGxVUTAEOg0xL0xXUW1UQms5amR-
       X-Goog-Upload-Header-Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       X-Goog-Upload-Header-Pragma:
@@ -172,11 +239,11 @@ http_interactions:
       X-Goog-Upload-Header-Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       X-Goog-Upload-Header-Date:
-      - Sun, 25 Dec 2016 20:35:26 GMT
+      - Mon, 26 Dec 2016 01:54:35 GMT
       Content-Length:
       - '0'
       Date:
-      - Sun, 25 Dec 2016 20:35:26 GMT
+      - Mon, 26 Dec 2016 01:54:35 GMT
       Server:
       - UploadServer
       Content-Type:
@@ -187,10 +254,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:26 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:35 GMT
 - request:
     method: post
-    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UopAO2AHrXtrzeJgBB0BipfwEJk0hVA4PJPzzgm7C5fmilljxMzH9DXkYBAzBFe7IWa6K1scmP0Kv9vz5Hms_iHQZ30lQ&upload_protocol=resumable
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2Uomi2y7Ribsa93FNLl7pChiF_jdZo2xABvw29AV_GH7ufk2c9mf1qnv_kQnKxsftpAzRWomAd7mq_Yxsx2JxRtZ0m9qyw&upload_protocol=resumable
     body:
       encoding: UTF-8
       string: !binary |-
@@ -314,9 +381,9 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:26 GMT
+      - Mon, 26 Dec 2016 01:54:35 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
       Content-Type:
       - application/json
       X-Goog-Upload-Command:
@@ -331,7 +398,7 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UopAO2AHrXtrzeJgBB0BipfwEJk0hVA4PJPzzgm7C5fmilljxMzH9DXkYBAzBFe7IWa6K1scmP0Kv9vz5Hms_iHQZ30lQ
+      - AEnB2Uomi2y7Ribsa93FNLl7pChiF_jdZo2xABvw29AV_GH7ufk2c9mf1qnv_kQnKxsftpAzRWomAd7mq_Yxsx2JxRtZ0m9qyw
       X-Goog-Upload-Status:
       - final
       Vary:
@@ -346,7 +413,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:27 GMT
+      - Mon, 26 Dec 2016 01:54:36 GMT
       Content-Length:
       - '42'
       Server:
@@ -357,10 +424,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGyZi1FSzdHYXhjNEk"
+         "id": "0B-GFJI5FWVGyUVBtemQ4M2hjSmM"
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:27 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:36 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27medium_1_image_medium_medium_1_image_medium.png.png_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
@@ -377,18 +444,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:27 GMT
+      - Mon, 26 Dec 2016 01:54:36 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:27 GMT
+      - Mon, 26 Dec 2016 01:54:36 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:27 GMT
+      - Mon, 26 Dec 2016 01:54:36 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -414,10 +481,77 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "files": []
+         "files": [
+          {
+           "id": "0B-GFJI5FWVGyUUJVMnlQM3ZJRk0",
+           "name": "medium_1_image_medium.png"
+          }
+         ]
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:27 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:37 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyUUJVMnlQM3ZJRk0?fields=id,%20name,%20thumbnailLink,%20webContentLink,%20webViewLink,%20trashed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        test-app/0.0.0 google-api-ruby-client/0.9.20 Linux/4.4.0-57-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Mon, 26 Dec 2016 01:54:37 GMT
+      Authorization:
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Mon, 26 Dec 2016 01:54:37 GMT
+      Date:
+      - Mon, 26 Dec 2016 01:54:37 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="35,34"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "id": "0B-GFJI5FWVGyUUJVMnlQM3ZJRk0",
+         "name": "medium_1_image_medium.png",
+         "trashed": true,
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyUUJVMnlQM3ZJRk0&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyUUJVMnlQM3ZJRk0/view?usp=drivesdk",
+         "thumbnailLink": "https://lh4.googleusercontent.com/4ur-KvILRU0JQTzj0ziddxm3Pe-xoD6g4aQF9L8-wQfugjbvPYKS1PDblybPfbPQAdprLw=s220"
+        }
+    http_version: 
+  recorded_at: Mon, 26 Dec 2016 01:54:37 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/upload/drive/v3/files?fields=id
@@ -434,9 +568,9 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:27 GMT
+      - Mon, 26 Dec 2016 01:54:37 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
       Content-Type:
       - application/json
       X-Goog-Upload-Protocol:
@@ -455,22 +589,22 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UpwEZQ-qz2f-y9ibcphMGV3I6hPffrdmioNZrrY2riX8eHWWnccnhGzqQ6FRpdH5CaleSFZZXagf2lZOoGRKKyPbyH3Ig
+      - AEnB2UqOtTc7G5x5xfc2Fx086dLpc0diF833f9B3pp-kbKGDpEq2sbNmmBCGBOT8v54ie54s_zfA3VGmjzjo3v_5hcKcFZegGw
       X-Goog-Upload-Status:
       - active
       X-Goog-Upload-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UpwEZQ-qz2f-y9ibcphMGV3I6hPffrdmioNZrrY2riX8eHWWnccnhGzqQ6FRpdH5CaleSFZZXagf2lZOoGRKKyPbyH3Ig&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UqOtTc7G5x5xfc2Fx086dLpc0diF833f9B3pp-kbKGDpEq2sbNmmBCGBOT8v54ie54s_zfA3VGmjzjo3v_5hcKcFZegGw&upload_protocol=resumable
       X-Goog-Upload-Control-Url:
-      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UpwEZQ-qz2f-y9ibcphMGV3I6hPffrdmioNZrrY2riX8eHWWnccnhGzqQ6FRpdH5CaleSFZZXagf2lZOoGRKKyPbyH3Ig&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UqOtTc7G5x5xfc2Fx086dLpc0diF833f9B3pp-kbKGDpEq2sbNmmBCGBOT8v54ie54s_zfA3VGmjzjo3v_5hcKcFZegGw&upload_protocol=resumable
       X-Goog-Upload-Chunk-Granularity:
       - '262144'
       X-Goog-Upload-Header-Vary:
       - Origin
       - X-Origin
       X-Goog-Upload-Header-X-Google-Backends:
-      - vkp10:4511
+      - vki132:4629
       X-Goog-Upload-Header-X-Google-Session-Info:
-      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTRranJyMWFxcW5ycWoxMmIyaWRpYnRkdDVuaW5pOWs4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSlsSSHlhMjkuQ2pDX0E3ejlNVFlwd01CUnl6VGNJUTVIWGNlS0dWR2pYcUNzcS1kU3Nzc01RcWxvejZFajFFamFQQ3VESVlzUldQczAEOg0xL0xXUW1UQms5amR-
+      - COTX1r_TBhoCGAYwADpvCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGIiekLqRGyJIOTMyMzk4MjM5NDk2LTRranJyMWFxcW5ycWoxMmIyaWRpYnRkdDVuaW5pOWs4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMO8OSlsSSHlhMjkuQ2pEQUFfRVFnRTF6NjhwN3h3R195WlV4N2wyTTN0TVhud0JJVnVhS2h2N3pLTnRpMjNEZWJ5anRWTU5PRS0zdGxVUTAEOg0xL0xXUW1UQms5amR-
       X-Goog-Upload-Header-Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       X-Goog-Upload-Header-Pragma:
@@ -478,11 +612,11 @@ http_interactions:
       X-Goog-Upload-Header-Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       X-Goog-Upload-Header-Date:
-      - Sun, 25 Dec 2016 20:35:28 GMT
+      - Mon, 26 Dec 2016 01:54:38 GMT
       Content-Length:
       - '0'
       Date:
-      - Sun, 25 Dec 2016 20:35:28 GMT
+      - Mon, 26 Dec 2016 01:54:38 GMT
       Server:
       - UploadServer
       Content-Type:
@@ -493,17 +627,17 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:28 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:38 GMT
 - request:
     method: post
-    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UpwEZQ-qz2f-y9ibcphMGV3I6hPffrdmioNZrrY2riX8eHWWnccnhGzqQ6FRpdH5CaleSFZZXagf2lZOoGRKKyPbyH3Ig&upload_protocol=resumable
+    uri: https://www.googleapis.com/upload/drive/v3/files?fields=id&upload_id=AEnB2UqOtTc7G5x5xfc2Fx086dLpc0diF833f9B3pp-kbKGDpEq2sbNmmBCGBOT8v54ie54s_zfA3VGmjzjo3v_5hcKcFZegGw&upload_protocol=resumable
     body:
       encoding: UTF-8
       string: !binary |-
         iVBORw0KGgoAAAANSUhEUgAAASYAAAEsCAYAAABuXx68AAAABGdBTUEAALGP
         C/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3Cc
         ulE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA
-        B3RJTUUH4AwZDyMYlOjsPAAAgABJREFUeNrt/eti28gONYguoIqU7CR7f/O+
+        B3RJTUUH4AwZFDYh7CvOsQAAgABJREFUeNrt/eti28gONYguoIqU7CR7f/O+
         5yXOvM481uy2RbIKmB9A3SjZcRI7vjTRzVCSdaFEcnFh4Ub/v/////3/ACAA
         DCAAiAAmALMv0R8nNFMc9vmM+l1IdUX1Nu1fMO71XzGt//h9bQ9Dx7/vn3vY
         V7M9dmQACcDqy+b3MwABoNFf9NLlsM9sqmiA1EBB4Y9rBw5lb9/Ai1+6Qime
@@ -1255,9 +1389,9 @@ http_interactions:
         xbkBZsNBX5Mrr4Eq+BU9FrAKhMm327Y5XF0BW6nKV7Rbwm/3J7XUJEi2/ez7
         NzL7MeS/bfdbD7EDGuXu32EWOpTOt2v7cDGqF6FQL77RwXOKwZlzqIxJ2bSz
         dmx3nyeKzABny3u3/l6MHJyJd8dT1Ter6zvEN9/SOkyhmlBZFvKQ4v8HLd+C
-        6fag7tAAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMTItMjVUMTU6MzU6MjQt
-        MDU6MDAfOLpIAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTEyLTI1VDE1OjM1
-        OjI0LTA1OjAwbmUC9AAAAABJRU5ErkJggg==
+        6fag7tAAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMTItMjVUMjA6NTQ6MzMt
+        MDU6MDBwDLPtAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTEyLTI1VDIwOjU0
+        OjMzLTA1OjAwAVELUQAAAABJRU5ErkJggg==
     headers:
       User-Agent:
       - |-
@@ -1268,9 +1402,9 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:28 GMT
+      - Mon, 26 Dec 2016 01:54:38 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
       Content-Type:
       - application/json
       X-Goog-Upload-Command:
@@ -1285,7 +1419,7 @@ http_interactions:
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UpwEZQ-qz2f-y9ibcphMGV3I6hPffrdmioNZrrY2riX8eHWWnccnhGzqQ6FRpdH5CaleSFZZXagf2lZOoGRKKyPbyH3Ig
+      - AEnB2UqOtTc7G5x5xfc2Fx086dLpc0diF833f9B3pp-kbKGDpEq2sbNmmBCGBOT8v54ie54s_zfA3VGmjzjo3v_5hcKcFZegGw
       X-Goog-Upload-Status:
       - final
       Vary:
@@ -1300,7 +1434,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:29 GMT
+      - Mon, 26 Dec 2016 01:54:39 GMT
       Content-Length:
       - '42'
       Server:
@@ -1311,10 +1445,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGyTTFQSElfSEw4TVU"
+         "id": "0B-GFJI5FWVGybXFGUjhYb1N4ZUk"
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:30 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:39 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
@@ -1331,18 +1465,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:30 GMT
+      - Mon, 26 Dec 2016 01:54:39 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:30 GMT
+      - Mon, 26 Dec 2016 01:54:40 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:30 GMT
+      - Mon, 26 Dec 2016 01:54:40 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1370,16 +1504,16 @@ http_interactions:
         {
          "files": [
           {
-           "id": "0B-GFJI5FWVGyZi1FSzdHYXhjNEk",
+           "id": "0B-GFJI5FWVGyUVBtemQ4M2hjSmM",
            "name": "original_1_image.png"
           }
          ]
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:30 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:40 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyZi1FSzdHYXhjNEk?fields=id,%20name,%20thumbnailLink
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyUVBtemQ4M2hjSmM?fields=id,%20name,%20thumbnailLink,%20webContentLink,%20webViewLink,%20trashed
     body:
       encoding: UTF-8
       string: ''
@@ -1393,18 +1527,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:30 GMT
+      - Mon, 26 Dec 2016 01:54:40 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:30 GMT
+      - Mon, 26 Dec 2016 01:54:40 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:30 GMT
+      - Mon, 26 Dec 2016 01:54:40 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1430,12 +1564,15 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGyZi1FSzdHYXhjNEk",
+         "id": "0B-GFJI5FWVGyUVBtemQ4M2hjSmM",
          "name": "original_1_image.png",
-         "thumbnailLink": "https://lh4.googleusercontent.com/uQjFGpSCxKYYt2KThmxWn9ZAH9_LPv17xJrZQuBWvr4nTaG2tZLPbx94gMbFKnYVZOUVbQ=s220"
+         "trashed": false,
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyUVBtemQ4M2hjSmM&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyUVBtemQ4M2hjSmM/view?usp=drivesdk",
+         "thumbnailLink": "https://lh3.googleusercontent.com/w4imbpUNyKJeHb-xKZQOK44WtJyLVn_d3QPkv7owyUYIwt2uU3aRK8cj31Z_rWzPgcieAw=s220"
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:30 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:40 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27medium_1_image_medium.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
@@ -1452,18 +1589,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:30 GMT
+      - Mon, 26 Dec 2016 01:54:40 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:31 GMT
+      - Mon, 26 Dec 2016 01:54:41 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:31 GMT
+      - Mon, 26 Dec 2016 01:54:41 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1491,16 +1628,16 @@ http_interactions:
         {
          "files": [
           {
-           "id": "0B-GFJI5FWVGyTTFQSElfSEw4TVU",
+           "id": "0B-GFJI5FWVGybXFGUjhYb1N4ZUk",
            "name": "medium_1_image_medium.png"
           }
          ]
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:31 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:41 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyTTFQSElfSEw4TVU?fields=id,%20name,%20thumbnailLink
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGybXFGUjhYb1N4ZUk?fields=id,%20name,%20thumbnailLink,%20webContentLink,%20webViewLink,%20trashed
     body:
       encoding: UTF-8
       string: ''
@@ -1514,18 +1651,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:31 GMT
+      - Mon, 26 Dec 2016 01:54:41 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:31 GMT
+      - Mon, 26 Dec 2016 01:54:41 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:31 GMT
+      - Mon, 26 Dec 2016 01:54:41 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1551,12 +1688,15 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGyTTFQSElfSEw4TVU",
+         "id": "0B-GFJI5FWVGybXFGUjhYb1N4ZUk",
          "name": "medium_1_image_medium.png",
-         "thumbnailLink": "https://lh5.googleusercontent.com/5rxgKedxXBLCIorqlbx9hzPQD6MVaV5EjQnD2BvlniyJ4j2nPIi0QAXxzdwm7tz8PByn9g=s220"
+         "trashed": false,
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGybXFGUjhYb1N4ZUk&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGybXFGUjhYb1N4ZUk/view?usp=drivesdk",
+         "thumbnailLink": "https://lh5.googleusercontent.com/rXEr6VqplRvZ835J7J9BOckZO7mjlJ3rdN3r2_PtKmTO5U73YFIHlL2_TnigQJJUO2QK_Q=s220"
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:31 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:41 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/drive/v3/files?fields=files(id,%20name)&pageSize=1&q=name%20contains%20%27original_1_image.png%27%20and%20%270B-GFJI5FWVGyQXFKRzkydldoalk%27%20in%20parents
@@ -1573,18 +1713,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:31 GMT
+      - Mon, 26 Dec 2016 01:54:41 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:32 GMT
+      - Mon, 26 Dec 2016 01:54:47 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:32 GMT
+      - Mon, 26 Dec 2016 01:54:47 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1612,16 +1752,16 @@ http_interactions:
         {
          "files": [
           {
-           "id": "0B-GFJI5FWVGyZi1FSzdHYXhjNEk",
+           "id": "0B-GFJI5FWVGyUVBtemQ4M2hjSmM",
            "name": "original_1_image.png"
           }
          ]
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:32 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:47 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyZi1FSzdHYXhjNEk?fields=id,%20name,%20thumbnailLink
+    uri: https://www.googleapis.com/drive/v3/files/0B-GFJI5FWVGyUVBtemQ4M2hjSmM?fields=id,%20name,%20thumbnailLink,%20webContentLink,%20webViewLink,%20trashed
     body:
       encoding: UTF-8
       string: ''
@@ -1635,18 +1775,18 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 25 Dec 2016 20:35:32 GMT
+      - Mon, 26 Dec 2016 01:54:47 GMT
       Authorization:
-      - Bearer ya29.CjC_A7z9MTYpwMBRyzTcIQ5HXceKGVGjXqCsq-dSsssMQqloz6Ej1EjaPCuDIYsRWPs
+      - Bearer ya29.CjDAA_EQgE1z68p7xwG_yZUx7l2M3tMXnwBIVuaKhv7zKNti23DebyjtVMNOE-3tlUQ
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Sun, 25 Dec 2016 20:35:32 GMT
+      - Mon, 26 Dec 2016 01:54:47 GMT
       Date:
-      - Sun, 25 Dec 2016 20:35:32 GMT
+      - Mon, 26 Dec 2016 01:54:47 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1672,10 +1812,13 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "id": "0B-GFJI5FWVGyZi1FSzdHYXhjNEk",
+         "id": "0B-GFJI5FWVGyUVBtemQ4M2hjSmM",
          "name": "original_1_image.png",
-         "thumbnailLink": "https://lh6.googleusercontent.com/Auv6b7VJMwNmZtS6r4r13UGNdSEaB4kdZhS--__p9p_NkgjHMnbTKA4hOkSbCFPpDlt1pA=s220"
+         "trashed": false,
+         "webContentLink": "https://drive.google.com/uc?id=0B-GFJI5FWVGyUVBtemQ4M2hjSmM&export=download",
+         "webViewLink": "https://drive.google.com/file/d/0B-GFJI5FWVGyUVBtemQ4M2hjSmM/view?usp=drivesdk",
+         "thumbnailLink": "https://lh6.googleusercontent.com/gEItY2TlLtkzKgYMKjSMnswkhMqFUUCg1IWsJzwYdJAMhesr-TCq-ZiZHQ1hULfkFEYpFw=s220"
         }
     http_version: 
-  recorded_at: Sun, 25 Dec 2016 20:35:32 GMT
+  recorded_at: Mon, 26 Dec 2016 01:54:47 GMT
 recorded_with: VCR 3.0.3
