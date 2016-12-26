@@ -142,7 +142,12 @@ module Paperclip
       # @return [ String ] with url
       def public_url_for(title)
         metadata_or_default_img_from(title) do |metadata|
-          effective_url_from(metadata.web_content_link)
+          # effective_url_from(metadata.web_content_link)
+          if content_type =~ /image/
+            custom_thumbnail_image_for(metadata.thumbnail_link, 1000)
+          else
+            metadata.web_content_link
+          end
         end
       end
 
@@ -167,6 +172,10 @@ module Paperclip
         "#{ file_url }=s#{ custom_width }"
       end
 
+      # TOO SLOW and PERMISSIONS ISSUES
+      # Seems that the retrieved file url is only visible for the
+      # user which is owner and is currently log in GDrive.
+      #
       # Gets the effective url from the web content link
       # These are a series of steps to hack the way that GDrive API
       # handle its urls. It consists in catch a Google::Apis::RedirectError error
