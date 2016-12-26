@@ -109,9 +109,9 @@ Also, you can use the resize feature provided by GDrive API, you only have to pa
 
 ## Issues
 
-### No images Issues (PDF, CSV, etc)
+### Non image files Issues (PDF, CSV, etc)
 
-I still working on retrieve the raw files, I would like to get the files as `thumbnail_link` file attribute does, but it is not that easy, because Google Drive API has some retrictions. Therefore, all non images files are shown in Google Drive viwer.
+I still working on retrieve the raw files, I would like to get the files as `thumbnail_link` file attribute does, but it is not that easy, because Google Drive API has some retrictions. So, all non image files are shown in Google Drive viewer.
 
 ## Useful links
 
