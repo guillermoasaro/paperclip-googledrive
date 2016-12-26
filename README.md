@@ -101,7 +101,7 @@ The another file is called some_photo_medium.jpg because style names (other than
 Also, you can use the resize feature provided by GDrive API, you only have to pass as parameter in the url params the option `:custom` and `width`, as follows:
 
 ```ruby
-  some_product.photo.url(:custom, width: 500)
+  some_product.photo.url(:custom_thumb, width: 500)
 ```
 
 ## Misc
