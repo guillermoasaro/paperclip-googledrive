@@ -142,9 +142,7 @@ module Paperclip
       # @return [ String ] with url
       def public_url_for(title)
         metadata_or_default_img_from(title) do |metadata|
-          # TODO: fix permission issues on the view with this command
-          # effective_url_from(metadata.web_content_link)
-          custom_thumbnail_image_for(metadata.thumbnail_link, 1000)
+          effective_url_from(metadata.web_content_link)
         end
       end
 
