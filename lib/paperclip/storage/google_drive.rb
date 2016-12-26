@@ -146,7 +146,7 @@ module Paperclip
           if content_type =~ /image/
             custom_thumbnail_image_for(metadata.thumbnail_link, 1000)
           else
-            metadata.web_content_link
+            metadata.web_view_link
           end
         end
       end
@@ -230,6 +230,7 @@ module Paperclip
         raise 'the file name was not retrieved' if metadata.name.nil?
         raise 'the file thumbnail_link was not retrieved' if metadata.thumbnail_link.nil?
         raise 'the file web_content_link was not retrieved' if metadata.web_content_link.nil?
+        raise 'the file web_view_link was not retrieved' if metadata.web_view_link.nil?
         raise 'the file trashed was not retrieved' if metadata.trashed.nil?
       end
 

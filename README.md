@@ -79,6 +79,7 @@ This is a hash containing any of the following options:
  - `:application_name` - is the name that you set for the application credentials on Google console.
 
 The :path option should be a block that returns a path that the uploaded file should be saved to. The block yields the attachment style and is executed in the scope of the model instance. For example:
+
 ```ruby
 class Product < ActiveRecord::Base
   has_attached_file :photo,
@@ -93,18 +94,24 @@ end
 ```
 For example, a new product is created with the ID of 14, and a some_photo.jpg as its photo. The following files would be saved to the Google Drive:
 
+```
 Public/14_some_photo.jpg
 Public/14_some_photo_medium.jpg
+```
 
 The another file is called some_photo_medium.jpg because style names (other than original) will always be appended to the filenames, for better management.
 
-Also, you can use the resize feature provided by GDrive API, you only have to pass as parameter in the url params the option `:custom` and `width`, as follows:
+Also, you can use the resize feature provided by GDrive API, you only have to pass as parameter in the url params the option `:custom_thumb` and `:width`, as follows:
 
 ```ruby
   some_product.photo.url(:custom_thumb, width: 500)
 ```
 
-## Misc
+## Issues
+
+### No images Issues (PDF, CSV, etc)
+
+I still working on retrieve the raw files, I would like to get the files as `thumbnail_link` file attribute does, but it is not that easy, because Google Drive API has some retrictions. Therefore, all non images files are shown in Google Drive viwer.
 
 ## Useful links
 
