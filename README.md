@@ -2,7 +2,7 @@
 [![GitHub version](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive.svg)](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive)
 [![Code Climate](https://codeclimate.com/github/degzcs/paperclip-googledrive/badges/gpa.svg)](https://codeclimate.com/github/degzcs/paperclip-googledrive)
 
-PaperclipGoogledrive is a gem that extends paperclip storage for Google Drive (V3). Works with Rails 3.x. and later.
+PaperclipGoogleDrive is a gem that extends paperclip storage for Google Drive (V3). Works with Rails 3.x. and later.
 IMPORTANT NOTE: This repo was forked and upgraded to use Google Drive V3.
 
 ## Installation
@@ -96,17 +96,18 @@ For example, a new product is created with the ID of 14, and a some_photo.jpg as
 Public/14_some_photo.jpg
 Public/14_some_photo_medium.jpg
 
+The another file is called some_photo_medium.jpg because style names (other than original) will always be appended to the filenames, for better management.
+
 Also, you can use the resize feature provided by GDrive API, you only have to pass as parameter in the url params the option `:custom` and `width`, as follows:
 
 ```ruby
   some_product.photo.url(:custom, width: 500)
 ```
 
-The another file is called some_photo_medium.jpg because style names (other than original) will always be appended to the filenames, for better management.
-
 ## Misc
 
-Useful links
+## Useful links
+
 [Google APIs console](https://code.google.com/apis/console/)
 
 [Google Drive scopes](https://developers.google.com/drive/scopes)
@@ -117,7 +118,7 @@ Useful links
 
 ## License
 
-[MIT License](https://github.com/evinsou/paperclip-googledrive/blob/master/LICENSE)
+[MIT License](https://github.com/degzcs/paperclip-googledrive/blob/master/LICENSE)
 
 ## Contributing
 

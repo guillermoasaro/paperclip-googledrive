@@ -25,7 +25,7 @@ describe 'Paperclip::Storage::GoogleDrive' do
         expect(dummy.save).to be true
         expect(dummy.document.url).to be_present
         expect(dummy.document.url(:medium)).to be_present
-        expect(dummy.document.url(:custom, width: 542)).to match(/=s542/)
+        expect(dummy.document.url(:custom_thumb, width: 542)).to match(/=s542/)
       end
     end
 
