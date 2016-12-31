@@ -107,6 +107,10 @@ Also, you can use the resize feature provided by GDrive API, you only have to pa
   some_product.photo.url(:custom_thumb, width: 500)
 ```
 
+## Example App
+
+You can find an example of how to config a Rails project [here](https://github.com/degzcs/rails-paperclip-gdrive-example)
+
 ## Issues
 
 ### Non image files Issues (PDF, CSV, etc)
