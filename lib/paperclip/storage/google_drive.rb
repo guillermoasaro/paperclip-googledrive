@@ -217,7 +217,7 @@ module Paperclip
                     file_id,
                     fields: 'id, name, thumbnailLink, webContentLink, webViewLink, trashed'
                     )
-          validate_metadata(metadata)
+          # validate_metadata(metadata)
           metadata
         end
       end
