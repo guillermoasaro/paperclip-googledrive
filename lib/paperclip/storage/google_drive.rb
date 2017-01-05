@@ -109,7 +109,7 @@ module Paperclip
         if present?
           style = args.first.is_a?(Symbol) ? args.first : default_style
           options = args.last.is_a?(Hash) ? args.last : {}
-          if style == :custom_thumb
+          if style == :custom_thumb && is_valid_for_custom_thumb?
             custom_width = options[:width] || 220
             file_name = filename_from(default_style)
             public_url_custom_thumbnail_from(file_name, custom_width)
@@ -120,6 +120,10 @@ module Paperclip
         else
           default_image
         end
+      end
+
+      def is_valid_for_custom_thumb?
+        content_type =~ /image/ || content_type =~ /pdf/
       end
 
       # Gets full title/name
