@@ -55,7 +55,7 @@ end
 ```
 The `:google_drive_client_secret_path` option
 
-This is the path of the file which was obtained from your Google Drive app settings and the authorization Rake task.
+This is the path of the file downloaded from your Google Drive app settings by the authorization Rake task.
 
 Example of the overridden `path/to/client_secret.json` file:
 ```json
@@ -78,7 +78,7 @@ This is a hash containing any of the following options:
  - `:default_image` - an image in Public folder that used for attachments if attachment is not present
  - `:application_name` - is the name that you set for the application credentials on Google console.
 
-The :path option should be a block that returns a path that the uploaded file should be saved to. The block yields the attachment style and is executed in the scope of the model instance. For example:
+The :path option should be a block which returns a path that the uploaded file should be saved to. The block yields the attachment style and is executed in the scope of the model instance. For example:
 
 ```ruby
 class Product < ActiveRecord::Base
@@ -115,7 +115,7 @@ You can find an example of how to config a Rails project [here](https://github.c
 
 ### Non image files Issues (PDF, CSV, etc)
 
-I still working on retrieve the raw files, I would like to get the files as `thumbnail_link` file attribute does, but it is not that easy, because Google Drive API has some retrictions. So, all non image files are shown in Google Drive viewer.
+I still working on retrieve the raw files, I would like to get the file urls as `thumbnail_link` attribute does, but it is not that easy, because Google Drive API has some retrictions. So, all non image files are shown in Google Drive viewer.
 
 ## Useful links
 
