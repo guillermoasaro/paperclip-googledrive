@@ -228,7 +228,6 @@ module Paperclip
       def validate_metadata(metadata)
         raise 'the file id was not retrieved' if metadata.id.nil?
         raise 'the file name was not retrieved' if metadata.name.nil?
-        raise 'the file thumbnail_link was not retrieved' if metadata.thumbnail_link.nil?
         raise 'the file web_content_link was not retrieved' if metadata.web_content_link.nil?
         raise 'the file web_view_link was not retrieved' if metadata.web_view_link.nil?
         raise 'the file trashed was not retrieved' if metadata.trashed.nil?
