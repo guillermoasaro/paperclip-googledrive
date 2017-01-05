@@ -111,10 +111,32 @@ describe 'Paperclip::Storage::GoogleDrive' do
     it 'should upload a pdf file' do
       VCR.use_cassette('upload_pdf') do
         dummy.document = File.new('spec/fixtures/document.pdf', 'rb')
-        expect(dummy.document).to_not be_blank
         expect(dummy.document).to be_present
         expect(dummy.save).to be true
         expect(dummy.document.url).to be_present
+      end
+    end
+  end
+
+  context 'Manage ZIP files' do
+    before :each do
+      rebuild_model(
+      storage: :google_drive,
+      google_drive_client_secret_path: 'spec/support/client_secret.json',
+      google_drive_options: {
+        application_name: 'test-app',
+        public_folder_id: '0B-GFJI5FWVGyQXFKRzkydldoalk',
+        path: proc { |style| "#{style}_#{id}_#{document.original_filename}" }
+      }
+    )
+    @dummy = Dummy.new
+    end
+    it 'should upload a zip file' do
+      VCR.use_cassette('upload_zip') do
+        @dummy.document = File.new('spec/fixtures/document.zip', 'rb')
+        expect(@dummy.document).to be_present
+        expect(@dummy.save).to be true
+        expect(@dummy.document.url).to be_present
       end
     end
   end
