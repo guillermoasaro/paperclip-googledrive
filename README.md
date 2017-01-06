@@ -1,4 +1,5 @@
 # PaperclipGoogleDrive
+[![Build Status](https://travis-ci.org/degzcs/paperclip-googledrive.svg?branch=master)](https://travis-ci.org/degzcs/paperclip-googledrive)
 [![GitHub version](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive.svg)](https://badge.fury.io/gh/degzcs%2Fpaperclip-googledrive)
 [![Code Climate](https://codeclimate.com/github/degzcs/paperclip-googledrive/badges/gpa.svg)](https://codeclimate.com/github/degzcs/paperclip-googledrive)
 
