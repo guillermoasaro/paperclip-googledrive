@@ -78,6 +78,9 @@ This is a hash containing any of the following options:
  - `:public_folder_id`- id of folder that must be created in google drive and set public permissions on it
  - `:default_image` - an image in Public folder that used for attachments if attachment is not present
  - `:application_name` - is the name that you set for the application credentials on Google console.
+ - `:timeout_sec` - How long, in seconds, before requests time out.
+ - `:open_timeout_sec` - How long, in seconds, before failed connections time out
+ - `:retries` - Number of times to retry requests on server error
 
 The :path option should be a block which returns a path that the uploaded file should be saved to. The block yields the attachment style and is executed in the scope of the model instance. For example:
 
