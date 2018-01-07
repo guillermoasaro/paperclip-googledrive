@@ -10,15 +10,11 @@ IMPORTANT NOTE: This repo was forked and upgraded to use Google Drive V3.
 
 Add this line to your application's Gemfile:
 
-    gem 'paperclip-google-drive'
+    gem 'paperclip-google-drive', :git => 'git@github.com:/guillermoasaro/paperclip-google-drive.git'
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install paperclip-google-drive
 
 ## Google Drive Setup
 
