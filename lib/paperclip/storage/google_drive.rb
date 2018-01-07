@@ -88,7 +88,10 @@ module Paperclip
           # Initialize the client & Google+ API
           ::Paperclip::GoogleDrive::Session.from_config(
             @google_drive_client_secret_path,
-            application_name: @google_drive_options[:application_name]
+            application_name: @google_drive_options[:application_name],
+            timeout_sec: @google_drive_options[:timeout_sec],
+            open_timeout_sec: @google_drive_options[:open_timeout_sec],
+            retries: @google_drive_options[:retries]
           )
         end
       end

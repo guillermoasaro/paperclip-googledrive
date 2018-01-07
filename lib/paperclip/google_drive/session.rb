@@ -53,7 +53,7 @@ module Paperclip
             config.refresh_token = credentials.refresh_token
           end
           config.save
-          init_drive_service(options[:application_name], credentials)
+          init_drive_service(options, credentials)
         end
 
         # @param config_path [ String ]
@@ -95,10 +95,13 @@ module Paperclip
         # @param application_name [ String ]
         # @param credentials [ Google::Auth::UserRefreshCredentials ]
         # @return [ Google::Apis::DriveV3::DriveService ]
-        def init_drive_service(application_name, credentials)
+        def init_drive_service(options, credentials)
           # Initialize the API
           client = Google::Apis::DriveV3::DriveService.new
-          client.client_options.application_name = application_name
+          client.client_options.application_name = options[:application_name]
+          client.request_options.timeout_sec = options[:timeout_sec] if  options[:timeout_sec]
+          client.request_options.open_timeout_sec = options[:open_timeout_sec] if  options[:open_timeout_sec]
+          client.request_options.retries = options[:retries] if  options[:retries]
           client.authorization = credentials
           client
         end
